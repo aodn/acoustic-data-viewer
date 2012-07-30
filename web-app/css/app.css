@@ -1,0 +1,164 @@
+html, body {
+    
+    
+/*font-family:"Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;*/
+font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;
+   
+    margin: 0px; 
+    color: #666;
+
+}
+
+
+table {
+ font-size: 11px;
+}
+
+h1{ color:#3399CC; font-size: 20px; font-weight: bold; padding-top:8px; white-space:nowrap; clear: both}
+h2 { color:#3399CC; font-size: 16px; font-weight: bold; white-space:nowrap; clear: both}
+h3 { color:#3399CC; font-size: 13px; font-weight: bold; margin-bottom:5px;margin-top:6px; white-space:nowrap; clear: both}
+h4 {  font-size: 12px;  margin: 3px 2px;}
+h5 { color:#333333; font-size: 11px;  margin: 0px 2px;}
+h6 { color:#333333; font-size: 11px;  margin: 0px 2px; display:inline;  }
+
+
+a {
+    color: #666;
+    
+}
+a img{
+    border: none;
+}
+      
+
+a:hover, .a_hover{
+    color: black;
+
+}
+a[rel="external"], a.external {
+white-space: nowrap;
+padding-right: 15px;
+background: url(../images/extlink.gif) no-repeat 100% 50%;
+zoom: 1;
+}
+
+input, select, textarea, button {
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    font: 11px verdana, arial, helvetica, sans-serif;
+    margin: 2px 0;
+    padding: 2px 4px;
+}
+
+.readonly {
+    border: 0;
+}
+select {
+   padding: 2px 2px 2px 0;
+}
+textarea {
+	width: 340px;
+	height: 50px;
+	vertical-align: top;
+}
+input:focus, select:focus, textarea:focus {
+    border: 1px solid #b2d1ff;
+}
+
+table.featureInfo, table.featureInfo td, table.featureInfo th {
+        border:1px solid #ddd;
+        border-collapse:collapse;
+        margin:0;
+        padding:0;
+        font-size: 90%;
+        padding:.2em .1em;
+    }
+    table.featureInfo th {
+        padding:.2em .2em;
+        font-weight:bold;
+        background:#eee;
+    }
+    table.featureInfo td{
+        background:#fff;
+    }
+    table.featureInfo tr.odd td{
+        background:#eee;
+    }
+    table.featureInfo caption{
+        text-align:left;
+        font-size:100%;
+        font-weight:bold;
+        text-transform:uppercase;
+        padding:.2em .2em;
+    }
+
+
+
+.extlink {
+    margin-left: 2px;   
+}
+.right {
+    float: right;
+    clear:both;
+}
+
+
+.small {
+    font-size: small;
+}
+.error {
+    
+    color: #f71bbc;
+    font-weight: bold;
+}
+
+
+
+.toplinks {
+
+
+
+	float:right;
+	position: absolute;
+    top: 4px;
+	right: 20px;
+	padding: 10px;
+	padding-top:4px;
+	padding-bottom:6px;
+}
+.toplinks a{
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0px 6px;
+    text-decoration: none;
+}
+.toplinks a:hover{
+    text-decoration: underline;
+}
+
+#mainSpectrogramsContainer {
+	padding: 15px;
+	margin: 10px;
+	background-color: #333;
+}
+
+.stepcarousel{
+/* NO PADDING */
+position: relative; /*leave this value alone*/
+overflow: scroll; /*leave this value alone*/
+
+height: 240px; /*Height should enough to fit largest content's height*/
+}
+
+.stepcarousel .belt{
+position: absolute; /*leave this value alone*/
+left: 0;
+top: 0;
+}
+
+.stepcarousel .panel{
+float: left; /*leave this value alone*/
+overflow: hidden; /*clip content that go outside dimensions of holding panel DIV*/
+/* width: 250px; Width of each panel holding each content. If removed, widths should be individually defined on each content DIV then. */
+}
+

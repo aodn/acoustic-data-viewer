@@ -14,7 +14,7 @@ table {
  font-size: 11px;
 }
 
-h1{ color:#3399CC; font-size: 20px; font-weight: bold; padding-top:8px; white-space:nowrap; clear: both}
+h1{ color:#3399CC; font-size: 20px; font-weight: bold; padding-top:8px; white-space:nowrap; }
 h2 { color:#3399CC; font-size: 16px; font-weight: bold; white-space:nowrap; clear: both}
 h3 { color:#3399CC; font-size: 13px; font-weight: bold; margin-bottom:5px;margin-top:6px; white-space:nowrap; clear: both}
 h4 {  font-size: 12px;  margin: 3px 2px;}
@@ -112,7 +112,9 @@ table.featureInfo, table.featureInfo td, table.featureInfo th {
     font-weight: bold;
 }
 
-
+#mainbody {
+	padding: 10px;
+}
 
 .toplinks {
 
@@ -146,14 +148,16 @@ table.featureInfo, table.featureInfo td, table.featureInfo th {
 /* NO PADDING */
 position: relative; /*leave this value alone*/
 overflow: scroll; /*leave this value alone*/
-
-height: 240px; /*Height should enough to fit largest content's height*/
+height: 200px; /*Height should enough to fit largest content's height*/
 }
 
 .stepcarousel .belt{
 position: absolute; /*leave this value alone*/
 left: 0;
 top: 0;
+}
+.panelinfo {
+	color: #999999;
 }
 
 .stepcarousel .panel{
@@ -162,3 +166,23 @@ overflow: hidden; /*clip content that go outside dimensions of holding panel DIV
 /* width: 250px; Width of each panel holding each content. If removed, widths should be individually defined on each content DIV then. */
 }
 
+.stepcarousel .panel a{
+	cursor: crosshair;
+}
+
+
+a.controls {
+	padding: 0px 5px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.controls img {
+	position: relative;
+    top: 4px;
+}
+.title {
+	position: absolute;
+	left: 550px;
+	top: 45px;
+}

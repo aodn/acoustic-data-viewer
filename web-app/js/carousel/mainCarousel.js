@@ -1,37 +1,21 @@
 
 
-$(document).ready(function () {
-	
-	//$("#mainSpectrograms").click(function(e) {
-	 // console.log(e.clientX);
-	 // e.preventDefault();
-	//});
-	
-});
 
-function handleGraphCick(e,imageId) {
+
+function handleSpectroClick(e,imageId) {
 	// we need to know the position of the image
 	// get the first parent with the class panel
 	var panelPosition = $('#'+imageId).parents('.panel').position(); //parent div of image
 	var containerPosition = $("#mainSpectrograms").position();
 	var imageLeftPosition = panelPosition.left + containerPosition.left
 	var clickLeftPosition = e.clientX - imageLeftPosition;
-	console.log(clickLeftPosition + " = pixels from the left of the image '" + imageId + "'");	
+	
+	$('#mainSpectrogramsClickDetails').html(clickLeftPosition + " = pixels from the left of the image '" + imageId + "'");	
 	e.preventDefault();
 }
 
 
-stepcarousel.setup({
-	galleryid: 'mainSpectrograms', //id of carousel DIV
-	beltclass: 'belt', //class of inner "belt" DIV containing all the panel DIVs
-	panelclass: 'panel', //class of panel DIVs each holding content
-	panelbehavior: {speed:300, wraparound:true, persist:true},
-	//defaultbuttons: {enable: true, moveby: 1, leftnav: ['arrowl.gif', -10, 100], rightnav: ['arrowr.gif', -10, 100]},
-	defaultbuttons: {enable: false, moveby: 1, leftnav: ['arrowl.gif', -10, 100], rightnav: ['arrowr.gif', -10, 100]},
-	statusvars: ['statusA', 'statusB', 'statusC'], // Register 3 "status" variables
-	contenttype: ['inline']
-	});
-//stepcarousel.loadcontent('mygallery', 'external2.htm')
+
 
 
 

@@ -5,9 +5,8 @@
 
 
 
-
-var stepcarousel={
-	ajaxloadingmsg: '<div style="margin: 1em; font-weight: bold"><img src="ajaxloadr.gif" style="vertical-align: middle" /> Fetching Content. Please wait...</div>', //customize HTML to show while fetching Ajax content
+var stepcarousel = {
+	ajaxloadingmsg: '', //customize HTML to show while fetching Ajax content
 	defaultbuttonsfade: 0.4, //Fade degree for disabled nav buttons (0=completely transparent, 1=completely opaque)
 	configholder: {},
 
@@ -157,7 +156,7 @@ var stepcarousel={
             return
         }
         stepcarousel.stopautostep(config)
-        var pindex=Math.min(pindex-1, config.paneloffsets.length-1)
+        var pindex = Math.min(pindex-1, config.paneloffsets.length-1);
         var endpoint=config.paneloffsets[pindex]+(pindex==0? 0 : config.beltoffset)
         if (config.panelbehavior.wraparound==false && config.defaultbuttons.enable==true){ //if carousel viewer should stop at first or last panel (instead of wrap back or forth)
             this.fadebuttons(config, pindex)
@@ -245,10 +244,10 @@ var stepcarousel={
 			srcs=[$templateimg.attr('src'), $templateimg.attr('data-over'), $templateimg.attr('data-select')] //remember control's over and out, and selected image src
 			for (var i=0; i<asize; i++){
 				var moveto=Math.min(i*moveby, config.lastvisiblepanel)
-				imgarray.push(imghtml.replace(/>$/, ' data-index="'+i+'" data-moveto="'+moveto+'" title="Move to Image '+(moveto+1)+'">') +'\n')
+				imgarray.push(imghtml.replace(/>$/, ' data-index="'+i+'" data-moveto="'+moveto+'" title="Move to graph '+(moveto+1)+'">') +'\n')
 				controlpoints.push(moveto) //store panel index each control goes to when clicked on
 			}
-			var $controls=$('<span></span>').replaceAll($templateimg).append(imgarray.join('')).find('img') //replace template link with links and return them
+			var $controls=$('<span class="controls" ></span>').replaceAll($templateimg).append(imgarray.join('')).find('img') //replace template link with links and return them
 			$controls.css({cursor:'pointer'})
 			config.$paginatediv.bind('click', function(e){
 				var $target=$(e.target)
@@ -354,5 +353,6 @@ var stepcarousel={
 		})
 	}
 }
+
 
 

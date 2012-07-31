@@ -6,42 +6,22 @@ class SpectrogramsController {
 	
 	def list() {
 	
-	render """
-			<div class="panel" style="width:250px" >
-			  <a href="#" onclick="handleSpectroClick(event,'imageId');return false;" >
-				<img id="imageId"src="http://i30.tinypic.com/531q3n.jpg" />
-			  </a>
-			  <div class="panelinfo">| a date</div>
-			</div>
-			<div class="panel" style="width:220px" >			
-			  <a href="#" onclick="handleSpectroClick(event,'imageId2');return false;" >
-				<img id="imageId2" src="http://i29.tinypic.com/xp3hns.jpg" />
-			  </a>			  
-			  <div class="panelinfo">| another date</div>
-			</div>		  
-			<div class="panel" style="width:280px" >			
-			  <a href="#" onclick="handleSpectroClick(event,'imageId3');return false;" >
-				<img id="imageId3" src="http://i26.tinypic.com/11l7ls0.jpg" />
-			  </a>
-			</div>
-			<div class="panel" style="width:240px" >
-			  <a href="#" onclick="handleSpectroClick(event,'imageId4');return false;" >
-				<img id="imageId4"src="http://i30.tinypic.com/531q3n.jpg" />
-			  </a>
-			</div>
-			<div class="panel" style="width:235px" >			
-			  <a href="#" onclick="handleSpectroClick(event,'imageId5');return false;" >
-				<img id="imageId5" src="http://i29.tinypic.com/xp3hns.jpg" />
-			  </a>
-			</div>		  
-			<div class="panel" style="width:250px" >			
-			  <a href="#" onclick="handleSpectroClick(event,'imageId6');return false;" >
-				<img id="imageId6" src="http://i26.tinypic.com/11l7ls0.jpg" />
-			  </a>
-			</div>	
+		def spectrograms = [
+			[uid: '123', url: 'http://i30.tinypic.com/531q3n.jpg', width: '250', date: '24/02/1967 10:24am'],
+			[uid: '124', url: 'http://i29.tinypic.com/xp3hns.jpg', width: '190',  date: '25/02/1967 2:24am'],
+			[uid: '125', url: 'http://i26.tinypic.com/11l7ls0.jpg', width: '250',  date: '26/02/1967 6:24pm'],
+			[uid: '126', url: 'http://i30.tinypic.com/531q3n.jpg', width: '200', date: '24/02/1967 10:24am'],
+			[uid: '127', url: 'http://i29.tinypic.com/xp3hns.jpg', width: '170',  date: '25/02/1967 2:24am'],
+			[uid: '128', url: 'http://i26.tinypic.com/11l7ls0.jpg', width: '20',  date: '26/02/1967 6:24pm']
+			
+		]
 		
-		"""
-	
+		def model = [
+            spectrogramsList: spectrograms//,
+            //deployment: 'test deployment'
+			// blagh blah
+        ]
+		render template: "list", model: model	
 	
 	
 	}

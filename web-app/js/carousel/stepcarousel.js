@@ -55,8 +55,8 @@ var stepcarousel = {
 	},
 
 	addnavbuttons:function($, config, currentpanel){
-		config.$leftnavbutton=$('<img id="navButtonL" src="'+config.defaultbuttons.leftnav[0]+'">').css({zIndex:50, position:'absolute', left:config.defaultbuttons.leftnav[1]+'px', top:config.defaultbuttons.leftnav[2]+'px', cursor:'hand', cursor:'pointer'}).attr({title:'Back '+config.defaultbuttons.moveby+' panels'}).appendTo('#'+config.galleryid)
-		config.$rightnavbutton=$('<img id="navButtonR" src="'+config.defaultbuttons.rightnav[0]+'">').css({zIndex:50, position:'absolute', right:config.defaultbuttons.rightnav[1]+'px', top:config.defaultbuttons.rightnav[2]+'px', cursor:'hand', cursor:'pointer'}).attr({title:'Forward '+config.defaultbuttons.moveby+' panels'}).appendTo('#'+config.galleryid)
+		config.$leftnavbutton=$('<img id="navButtonL" src="'+config.defaultbuttons.leftnav[0]+'">').css({zIndex:50, position:'absolute', left:config.defaultbuttons.leftnav[1]+'px', top:config.defaultbuttons.leftnav[2]+'px', cursor:'hand', cursor:'pointer'}).attr({title:'Back '+config.defaultbuttons.moveby}).appendTo('#'+config.galleryid)
+		config.$rightnavbutton=$('<img id="navButtonR" src="'+config.defaultbuttons.rightnav[0]+'">').css({zIndex:50, position:'absolute', right:config.defaultbuttons.rightnav[1]+'px', top:config.defaultbuttons.rightnav[2]+'px', cursor:'hand', cursor:'pointer'}).attr({title:'Forward '+config.defaultbuttons.moveby}).appendTo('#'+config.galleryid)
 
 		config.$leftnavbutton.bind('click', function(){ 
             //assign nav button event handlers
@@ -284,7 +284,7 @@ var stepcarousel = {
 
 	loadcontent:function(galleryid, url){
         var config=stepcarousel.configholder[galleryid]
-        //config.contenttype=['ajax', url]
+        config.contenttype=['ajax', url]
         stepcarousel.stopautostep(config)
         stepcarousel.resetsettings(jQuery, config)
         stepcarousel.init(jQuery, config)

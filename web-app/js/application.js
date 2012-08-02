@@ -1,15 +1,45 @@
 $(document).ready(function () {
 
+	// stop images being draggable inside the carousel in particular
+	$(document).on("mousedown", "img", function(event){ console.log("yep");event.preventDefault(); });
+	//$(".panel").delegate('img', 'dragstart', function (event) { console.log("yep");event.preventDefault(); });
 
+
+	$('#sitePicker').ddslick({
+		width: 350,
+		selectText: "  - Choose a Site - ",
+		onSelected: function(x){
+			if (x.selectedData.value != "") {
+				stepcarousel.loadcontent('mainSpectrographs','spectrographs/list?site=' + x.selectedData.value);
+				toggleHelp();
+
+			}
+			
+		}   
+	});
  	
 
 	
 });
 
+function toggleHelp(e,show) {
+	if (show) {
+		$('#mainSpectrographsSplash').show();
+		$('#mainSpectrographsContainer').hide();
+	}
+	else {
+		$('#mainSpectrographsSplash').hide();
+		$('#mainSpectrographsContainer').show();
+	}
+	if (e != undefined) {
+		e.preventDefault();
+	}
 	
-	
+}
+
+
 stepcarousel.setup({
-	galleryid: 'mainSpectrograms', //id of carousel DIV
+	galleryid: 'mainSpectrographs', //id of carousel DIV
 	beltclass: 'belt', //class of inner "belt" DIV containing all the panel DIVs
 	panelclass: 'panel', //class of panel DIVs each holding content
 	panelbehavior: {
@@ -18,22 +48,24 @@ stepcarousel.setup({
 		persist:false
 	},
 	defaultbuttons: {
-		enable: true, 
+		enable: false, 
 		moveby: 1, 
-		leftnav: ['images/rewind.png', -30, -70], 
-		rightnav: ['images/fast_forward.png', -60, -70]
+		leftnav: ['images/rewind.png', -50, -70], 
+		rightnav: ['images/fast_forward.png', -90, -70]
 	},
 	statusvars: ['statusA', 'statusB', 'statusC'], // Register 3 "status" variables
-	contenttype: ['ajax','spectrograms/list']
+	contenttype: ['ajax','spectrographs/list?sites=all']
 	,
 
 	onslide:function(){
-	// update mainSpectrograms_clickDetails with start date?
+	// update mainSpectrographs_clickDetails with start date?
 	},
 	oninit:function(){
-	 //custom code here
+	//custom code here
 	}
 });
+
+
 //stepcarousel.loadcontent('mygallery', 'external2.htm');
 	
 if (typeof jQuery !== 'undefined') {
@@ -46,5 +78,25 @@ if (typeof jQuery !== 'undefined') {
 	})(jQuery);
 }
 
+
+
+function handleSpectroClick(e,imageId) {
+	// we need to know the position of the image
+	// get the first parent with the class panel
+	var containerPosition = $("#mainSpectrographs").position();
+	var beltPosition = $('#'+imageId).parents('.belt').position(); //parent div of panel divs	
+	var panelPosition = $('#'+imageId).parents('.panel').position(); //parent div of image
+	var imageLeftPosition = panelPosition.left + containerPosition.left + beltPosition.left;
+	var clickLeftPosition = e.clientX - imageLeftPosition;	
+	
+	var res = ""; //beltposition left = " +  beltPosition.left + "<BR>";
+	//res += "panelposition left = " + panelPosition.left;	
+	//res += "<BR>mainSpectrographs left: " + containerPosition.left;
+	//res += "<BR>imageLeftPosition: " + imageLeftPosition;
+	//res += "<BR>clickLeftPosition: " + e.clientX + " - " + imageLeftPosition;
+	
+	$('#mainSpectrographsClickDetails').html( res + "<BR>" + clickLeftPosition + " = pixels from the left of the image '" + imageId + "'");	
+	e.preventDefault();
+}
 
 

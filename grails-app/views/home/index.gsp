@@ -46,38 +46,38 @@
 
 	  <div id="mainbody">
 		
-		<div id="mainSpectrographsSplash">
+		<div id="mainspectrogramSplash">
 		  <h2>Using the IMOS Acoustic data viewer:</h2>
 		  <ol>
 			<li>Choose a Site/deployment from the picker above</li>			
-			<li>You will be presented a set of Spectrographs for the deployment </li>			
-			<li>Clicking on a Spectrograph will open below an expanded view of the time period</li>	
+			<li>You will be presented a set of spectrogram for the deployment </li>			
+			<li>Clicking on a spectrogram will open below an expanded view of the time period</li>	
 			<li>...</li>
 		  </ol>
 		  
 		</div>
-		<div id="mainSpectrographsContainer" style="display:none">
+		<div id="mainspectrogramContainer" style="display:none">
 
 
 
-		  <div id="mainSpectrographsPicker" >Graph Picker: <a class="controls" href="javascript:stepcarousel.stepBy('mainSpectrographs', -1)"><img src="images/rewind.png" alt="Move back one" title="Move back one" /></a>
-			<span id="mainSpectrographs-paginate" >
+		  <div id="mainspectrogramPicker" >Graph Picker: <a class="controls" href="javascript:stepcarousel.stepBy('mainspectrogram', -1)"><img src="images/rewind.png" alt="Move back one" title="Move back one" /></a>
+			<span id="mainspectrogram-paginate" >
 			  <img src="images/chart_unselected.png" data-over="images/chart_over.png" data-select="images/chart_selected_white.png" data-moveby="1" />
 			</span>	 
-			<a class="controls" href="javascript:stepcarousel.stepBy('mainSpectrographs', 1)" ><img src="images/fast_forward.png"  alt="Move forward one"  title="Move forward one" /></a> 
+			<a class="controls" href="javascript:stepcarousel.stepBy('mainspectrogram', 1)" ><img src="images/fast_forward.png"  alt="Move forward one"  title="Move forward one" /></a> 
 		  </div>
 
-		<div id="mainSpectrographsLegend">&nbsp;</div>
-		<div id="mainSpectrographs" class="stepcarousel">
+		<div id="mainspectrogramLegend">&nbsp;</div>
+		<div id="mainspectrogram" class="stepcarousel">
 		  <div class="belt">
 		  </div>
 		</div>
 
 	  </div>
 
-	  <p id="mainSpectrographsClickDetails">&nbsp;</p>
+	  <p id="mainspectrogramClickDetails">&nbsp;</p>
 	  <div id="details" >
-		<div id="detailSpectrograph" style="display:none">
+		<div id="detailspectrogram" style="display:none">
 		  
 		</div>
 		

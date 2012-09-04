@@ -126,7 +126,7 @@ table.featureInfo, table.featureInfo td, table.featureInfo th {
 }
 
 #mainbody {
-	padding: 30px 20px;
+	padding: 20px;
 }
 
 .toplinks {
@@ -154,7 +154,7 @@ table.featureInfo, table.featureInfo td, table.featureInfo th {
 
 
 
-#mainSpectrographsContainer, #mainSpectrographsSplash {
+#mainspectrogramContainer, #mainspectrogramSplash {
 	padding: 5px 15px 15px 15px;
 	border-radius: 5px;
 	height:305px;
@@ -174,8 +174,8 @@ table.featureInfo, table.featureInfo td, table.featureInfo th {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
 
-#mainSpectrographsLegend {
-	background: url('../images/spectrograph_legend.png') no-repeat;
+#mainspectrogramLegend {
+	background: url('../images/spectrogram_legend.png') no-repeat;
 	width: 50px;
 height: 240px; /*Height must be stepcarousel height*/
 	float:left;
@@ -184,11 +184,11 @@ height: 240px; /*Height must be stepcarousel height*/
 	border-radius: 4px ;
 }
 
-#mainSpectrographsPicker {
+#mainspectrogramPicker {
 	margin-left: 50px;
 	padding: 6px;
 }
-#mainSpectrographs {
+#mainspectrogram {
 	margin-top: 6px;
 }
 
@@ -244,7 +244,7 @@ a.controls {
 }
 #logo {
 	float: left;
-	margin-left: 5px;
+	margin: 15px;
 }
 
 #sitePicker {

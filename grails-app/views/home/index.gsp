@@ -26,10 +26,9 @@
 		 <div id="sitePicker">
 
 		  <g:select id="sitePicker" name="name" size="3"
-					from="${sites}"
-					value="${sites?.name}"
+					from="${deployments}"
+					value="${deployments?.deploymentName}"
 					optionKey="id"
-					optionValue="name"				  
 					/>
 		</div>
 	  </div>
@@ -77,7 +76,11 @@
 
 	  <p id="mainspectrogramClickDetails">&nbsp;</p>
 	  <div id="details" >
-		<div id="detailspectrogram" style="display:none">
+		<div id="detailsaudio" style="display:none"></div>
+		
+		
+		<div id="detailspectrogram" ><img />
+		</div>
 		  
 		</div>
 		

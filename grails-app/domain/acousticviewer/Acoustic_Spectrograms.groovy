@@ -1,13 +1,15 @@
 package acousticviewer
 
-class Anmn_Acoustic_Sites {
+class Acoustic_Spectrograms {
 
-	Integer id
-	String name
-	String code
-	String spec_url
 	
-	// this is linking to DB view table. 
+	Integer id
+	Integer acousticDeployFk 
+	String filename
+	Integer width
+	Date timeStart
+	
+	
    transient beforeInsert = {
       throw new RuntimeException('create not allowed')
    }
@@ -17,15 +19,15 @@ class Anmn_Acoustic_Sites {
    transient beforeDelete = {
       throw new RuntimeException('delete not allowed')
    }
-   
-
-
+	
    static mapping = {
       cache usage: 'read-only'
       version false
-	  table 'anmn_acoustic_sites'
-      id    column:'pkid'
-        
+	  table 'acoustic_spectrograms'
+      id    column:'pkid', generator:'sequence', params:[sequence:'anmn_acoustic_spectrograms_pkid_seq']     
 
    } 
+    static constraints = {
+		
+    }
 }

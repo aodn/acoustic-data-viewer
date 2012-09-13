@@ -47,7 +47,7 @@ class Acoustic_DeploymentsControllerTests {
 
         assert response.redirectedUrl == '/acoustic_Deployments/show/1'
         assert controller.flash.message != null
-        assert Anmn_Acoustic_Sites.count() == 1
+        assert Acoustic_Deployments.count() == 1
     }
 
     void testShow() {
@@ -142,14 +142,14 @@ class Acoustic_DeploymentsControllerTests {
         def acoustic_Deployments = new Acoustic_Deployments(params)
 
         assert acoustic_Deployments.save() != null
-        assert Anmn_Acoustic_Sites.count() == 1
+        assert Acoustic_Deployments.count() == 1
 
         params.id = acoustic_Deployments.id
 
         controller.delete()
 
-        assert Anmn_Acoustic_Sites.count() == 0
-        assert Anmn_Acoustic_Sites.get(acoustic_Deployments.id) == null
+        assert Acoustic_Deployments.count() == 0
+        assert Acoustic_Deployments.get(acoustic_Deployments.id) == null
         assert response.redirectedUrl == '/acoustic_Deployments/list'
     }
 }

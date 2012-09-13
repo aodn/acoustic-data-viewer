@@ -1,8 +1,22 @@
-$(document).ready(function () {
 
+	
+
+
+$(document).ready(function () {
+	
+	
+	(function($) {
+		$('#spinner').ajaxStart(function() {
+			$(this).fadeIn();
+		}).ajaxStop(function() {
+			$(this).fadeOut();
+		});
+	})(jQuery);
+	
 	// stop images being draggable inside the carousel in particular
-	$(document).on("mousedown", "img", function(event){ console.log("yep");event.preventDefault(); });
-	//$(".panel").delegate('img', 'dragstart', function (event) { console.log("yep");event.preventDefault(); });
+	$(document).on("mousedown", "img", function(event){ 		
+		event.preventDefault();		
+	});
 
 
 	$('#sitePicker').ddslick({
@@ -10,32 +24,13 @@ $(document).ready(function () {
 		selectText: "  - Choose a Site - ",
 		onSelected: function(x){
 			if (x.selectedData.value != "") {
-				stepcarousel.loadcontent('mainspectrogram','spectrogram/list?deployment=' + x.selectedData.value);
+				stepcarousel.loadcontent('mainspectrogram','acoustic_Spectrograms/list?deployment=' + x.selectedData.value);
 				toggleHelp();
 
-			}
-			
+			}			
 		}   
-	});
- 	
-
-	
+	});	
 });
-
-function toggleHelp(e,show) {
-	if (show) {
-		$('#mainspectrogramSplash').show();
-		$('#mainspectrogramContainer').hide();
-	}
-	else {
-		$('#mainspectrogramSplash').hide();
-		$('#mainspectrogramContainer').show();
-	}
-	if (e != undefined) {
-		e.preventDefault();
-	}
-	
-}
 
 
 stepcarousel.setup({
@@ -54,9 +49,12 @@ stepcarousel.setup({
 		rightnav: ['images/fast_forward.png', -90, -70]
 	},
 	statusvars: ['statusA', 'statusB', 'statusC'], // Register 3 "status" variables
-	contenttype: ['ajax','spectrogram/list?sites=all']
+	contenttype: ['ajax','acoustic_Spectrograms/list?deployment=init']
 	,
-
+	onpanelclick:function(){
+		// easier to call the function with supplied parameters
+		//console.log()
+	},
 	onslide:function(){
 	// update mainspectrogram_clickDetails with start date?
 	},
@@ -65,38 +63,58 @@ stepcarousel.setup({
 	}
 });
 
-
-//stepcarousel.loadcontent('mygallery', 'external2.htm');
+function toggleHelp(e,show) {
+	if (show) {
+		$('#mainspectrogramSplash').show();
+		$('#mainspectrogramContainer').hide();
+	}
+	else {
+		$('#mainspectrogramSplash').hide();
+		$('#mainspectrogramContainer').show();
+	}
+	if (e != undefined) {
+		e.preventDefault();
+	}
 	
-if (typeof jQuery !== 'undefined') {
-	(function($) {
-		$('#spinner').ajaxStart(function() {
-			$(this).fadeIn();
-		}).ajaxStop(function() {
-			$(this).fadeOut();
-		});
-	})(jQuery);
+}
+
+function load_detailsaudio(clickLeftPosition,spectrogramId) {
+	$.ajax({
+		type: "POST",
+		url: "acoustic_Recordings",
+		data: {acu_specId: spectrogramId, x_coord: clickLeftPosition},
+		//contentType: "application/json; charset=utf-8",
+		dataType: "json",
+		success: function(msg) { 
+			
+			// Insert the returned image HTML into the <div>
+			// There should only be one which is the spectrogram for this time period? Throw an a little error?
+			$('#detailspectrogram img').attr("src", msg.specUrls[0]);
+			
+		}
+	});
 }
 
 
 
-function handleSpectroClick(e,imageId) {
+function handleSpectroClick(e,spectrogramId) {
+
 	// we need to know the position of the image
 	// get the first parent with the class panel
 	var containerPosition = $("#mainspectrogram").position();
-	var beltPosition = $('#'+imageId).parents('.belt').position(); //parent div of panel divs	
-	var panelPosition = $('#'+imageId).parents('.panel').position(); //parent div of image
+	var beltPosition = $('#acoustic_Spectrogram-'+spectrogramId).parents('.belt').position(); //parent div of panel divs	
+	var panelPosition = $('#acoustic_Spectrogram-'+spectrogramId).parents('.panel').position(); //parent div of image
 	var imageLeftPosition = panelPosition.left + containerPosition.left + beltPosition.left;
 	var clickLeftPosition = e.clientX - imageLeftPosition;	
 	
-	var res = ""; //beltposition left = " +  beltPosition.left + "<BR>";
-	//res += "panelposition left = " + panelPosition.left;	
-	//res += "<BR>mainspectrogram left: " + containerPosition.left;
-	//res += "<BR>imageLeftPosition: " + imageLeftPosition;
-	//res += "<BR>clickLeftPosition: " + e.clientX + " - " + imageLeftPosition;
 	
-	$('#mainspectrogramClickDetails').html( res + "<BR>" + clickLeftPosition + " = pixels from the left of the image '" + imageId + "'");	
+	$('#mainspectrogramClickDetails').html( "<BR>" + clickLeftPosition + " = pixels from the left of the image '" + spectrogramId + "'");	
+	load_detailsaudio(clickLeftPosition,spectrogramId);
+	
+	
 	e.preventDefault();
 }
+
+
 
 

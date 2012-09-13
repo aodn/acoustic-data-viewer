@@ -4,6 +4,6 @@ class HomeController {
 
     def index() {
 	
-		[sites: Anmn_Acoustic_Sites.list()]
+		[deployments: Acoustic_Deployments.list()]
 	}
 }

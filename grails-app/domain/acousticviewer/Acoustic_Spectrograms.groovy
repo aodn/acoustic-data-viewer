@@ -6,6 +6,7 @@ class Acoustic_Spectrograms {
 	Integer id
 	Integer acousticDeployFk 
 	String filename
+	String subdirectory
 	Integer width
 	Date timeStart
 	

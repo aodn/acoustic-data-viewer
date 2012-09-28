@@ -5,9 +5,13 @@
 	<title>IMOS Acoustic Data Viewer</title>
 	<link rel="stylesheet" href="${resource(dir: 'css', file: 'app.css')}" type="text/css">
 	<link rel="stylesheet" href="${resource(dir: 'css', file: 'ddslick.css')}" type="text/css">
+	<link rel="stylesheet" href="${resource(dir: 'css/ui-darkness', file: 'jquery-ui-1.8.23.custom.css')}" type="text/css">
 	<script type="text/javascript" src="${resource(dir:'js',file:'jquery-1.7.1.min.js')}"></script>
+	<script type="text/javascript" src="${resource(dir:'js',file:'jquery-ui-1.8.23.custom.min.js')}"></script>
 	<script type="text/javascript" src="${resource(dir:'js/carousel',file:'stepcarousel.js')}"></script>
 	<script type="text/javascript" src="${resource(dir:'js',file:'ddslick.js')}"></script>
+	<script type="text/javascript" src="${resource(dir:'js',file:'application.js')}"></script>
+	
 	<!--[if gte IE 9]>
 	  <style type="text/css">
 		.gradient {
@@ -44,7 +48,6 @@
 	 
 
 	  <div id="mainbody">
-		
 		<div id="mainspectrogramSplash">
 		  <h2>Using the IMOS Acoustic data viewer:</h2>
 		  <ol>
@@ -57,13 +60,23 @@
 		</div>
 		<div id="mainspectrogramContainer" style="display:none">
 
+		  
 
-
-		  <div id="mainspectrogramPicker" >Graph Picker: <a class="controls" href="javascript:stepcarousel.stepBy('mainspectrogram', -1)"><img src="images/rewind.png" alt="Move back one" title="Move back one" /></a>
-			<span id="mainspectrogram-paginate" >
+		  <div id="mainspectrogramPicker" >
+			<div class="inline">Graph Picker: <a class="controls" href="javascript:stepcarousel.stepBy('mainspectrogram', -1)">
+				<img src="images/rewind.png" alt="Move back one" title="Move back one" /></a>
+			</div>
+			<div class="inline" id="sliderContainer">
+			  <div id="slider"></div>			  
+			</div>
+			<!--div id="datePicker"><input type="text" id="date-picker"> </div-->
+			
+			<!--span id="mainspectrogram-paginate" >
 			  <img src="images/chart_unselected.png" data-over="images/chart_over.png" data-select="images/chart_selected_white.png" data-moveby="1" />
-			</span>	 
+			</span-->	
+		  <div class="inline">
 			<a class="controls" href="javascript:stepcarousel.stepBy('mainspectrogram', 1)" ><img src="images/fast_forward.png"  alt="Move forward one"  title="Move forward one" /></a> 
+		  </div>
 		  </div>
 
 		<div id="mainspectrogramLegend">&nbsp;</div>

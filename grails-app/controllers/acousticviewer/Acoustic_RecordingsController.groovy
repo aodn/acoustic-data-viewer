@@ -5,10 +5,7 @@ class Acoustic_RecordingsController {
 
     def index() {
 		
-		def imageFormats = ['png','jpg','jpeg','gif']
-		def audioFormats = ['wav','mp3']
-		def specUrls = []
-		def audioUrls = []
+		def map = []
 		
 		if (params.containsKey('acu_specId') && params.containsKey('x_coord')) {			
 			// acu_specId is the Acoustic_Spectrogram id
@@ -22,29 +19,35 @@ class Acoustic_RecordingsController {
 				
 				// findby acoustic_Spectrogram id and the pixel index
 				acoustic_recordingsList = Acoustic_Recordings.findByAcousticSpecFkAndXCoord(params.acu_specId,params.x_coord)
-				// path to files
-				def path = acoustic_DeploymentInstance.dataPath.replaceAll('/$', "") // remove trailing slash	
 				
-				acoustic_recordingsList?.list()?.each() {
-					// expect audio files or the (single) spectrogram of the audio file
-					def trimmed_filename = it.filename.trim()
+				
+				if (acoustic_recordingsList) {				
+					print acoustic_recordingsList.dump()
+
+					def trimmed_filename = acoustic_recordingsList.filename.trim()
 					def pos = trimmed_filename.lastIndexOf('.');
 					def extension = trimmed_filename.substring(pos+1)
 
-					//print imageFormats.class
-					for (s in imageFormats) {					
-						if (s.equals(extension)){
-							specUrls +=  path + '/recordings/images/' + trimmed_filename						
-						}
-					}
-					for (s in audioFormats) {							
-						if (s.equals(extension)){
-							audioUrls +=   path + '/recordings/audio/' + trimmed_filename
-						}
-					}
+					// path to files
+					def path = acoustic_DeploymentInstance.dataPath.replaceAll('/$', "") // remove trailing slash	
+					def wavPath = path + "/raw/"
+					def specUrl =  path + '/recording_spec/' + trimmed_filename		
+					def audioUrl = path + '/recording_wave/' + trimmed_filename
+					
+					/*
+						raw/   for all the raw sound recordings
+						deployment_spec/  for the whole-deployment spectrogram tiles to display on the viewer
+						recording_spec/  with one spectrogram image for each recording
+						recording_wave/  with a waveform image for each recording
+					*/
+					map = [ 'specUrl':specUrls ,'audioUrl':audioUrls, 'wavPath': wavPath, 'dateTime': acoustic_recordingsList.timeRecordingStart ]
 				}
+				
 			}
-			def map = [ 'specUrls':specUrls ,'audioUrls':audioUrls]
+			else {
+				// this should never happen. Email admin?
+				
+			}
 			render map as JSON
 			
 			

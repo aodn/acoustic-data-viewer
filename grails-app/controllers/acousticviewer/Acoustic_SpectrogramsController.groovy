@@ -1,4 +1,5 @@
 package acousticviewer
+import grails.converters.JSON
 
 class Acoustic_SpectrogramsController {
 
@@ -8,7 +9,7 @@ class Acoustic_SpectrogramsController {
 	def list() {
 		
 		
-		def spectrogram
+		def spectrograms
 		def deployment			
 			
 		if (params.deployment == 'init') {
@@ -16,22 +17,30 @@ class Acoustic_SpectrogramsController {
 		}
 		else {			
 
-			spectrogram = Acoustic_Spectrograms.list(params)
+			spectrograms = Acoustic_Spectrograms.findAllByAcousticDeployFk(params.deployment) 			
 			deployment = Acoustic_Deployments.get(params.deployment as int)
 			def model = [
-				spectrogramList: spectrogram, deployment: deployment
+				spectrogramList: spectrograms, deployment: deployment
 			]
-
-
 			render template: "list", model: model	
 		}
 		
-		
-		
-		
-		
-		
 	
-	
+	}
+	def listasJSON() {
+		def spectrograms
+		def deployment			
+			
+		if (params.deployment != "")	{
+
+			spectrograms = Acoustic_Spectrograms.findAllByAcousticDeployFk(params.deployment) 			
+			deployment = Acoustic_Deployments.get(params.deployment as int)
+			def model = [
+				spectrogramList: spectrograms, deployment: deployment
+			]
+			render  model	as JSON
+		}
+		
+		
 	}
 }

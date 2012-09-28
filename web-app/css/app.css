@@ -1,29 +1,29 @@
 html, body {
-    
-    
-/*font-family:"Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;*/
-font:14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+
+	/*font-family:"Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;*/
+	font:14px "Helvetica Neue",Helvetica,Arial,sans-serif;
     height: 100%;
 
     margin: 0px; 
     color: #666;
-background: #fafafa; /* Old browsers */
-/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iNTElIiBzdG9wLWNvbG9yPSIjZmFmYWZhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U1ZTVlNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9yYWRpYWxHcmFkaWVudD4KICA8cmVjdCB4PSItNTAiIHk9Ii01MCIgd2lkdGg9IjEwMSIgaGVpZ2h0PSIxMDEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-background: -moz-radial-gradient(center, ellipse cover,  #eeeeee 51%, #cccccc 100%); /* FF3.6+ */
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(51%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
-background: -webkit-radial-gradient(center, ellipse cover,  #eeeeee 51%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
-background: -o-radial-gradient(center, ellipse cover,  #eeeeee 51%,#cccccc 100%); /* Opera 12+ */
-background: -ms-radial-gradient(center, ellipse cover,  #eeeeee 51%,#cccccc 100%); /* IE10+ */
-background: radial-gradient(ellipse at center,  #eeeeee 51%,#cccccc 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+	background: #fafafa; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iNTElIiBzdG9wLWNvbG9yPSIjZmFmYWZhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U1ZTVlNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9yYWRpYWxHcmFkaWVudD4KICA8cmVjdCB4PSItNTAiIHk9Ii01MCIgd2lkdGg9IjEwMSIgaGVpZ2h0PSIxMDEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+	background: -moz-radial-gradient(center, ellipse cover,  #eeeeee 51%, #cccccc 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(51%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #eeeeee 51%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #eeeeee 51%,#cccccc 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #eeeeee 51%,#cccccc 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #eeeeee 51%,#cccccc 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
 
 
 }
 
 
 table {
- font-size: 11px;
+	font-size: 11px;
 }
 
 h1{  font-size: 22px; font-weight: bold;  white-space:nowrap; }
@@ -37,22 +37,22 @@ h6 { color:#333333; font-size: 11px;  margin: 0px 2px; display:inline;  }
 
 a {
     color: #666;
-    
+
 }
 a img{
     border: none;
 }
-      
+
 
 a:hover, .a_hover{
     color: black;
 
 }
 a[rel="external"], a.external {
-white-space: nowrap;
-padding-right: 15px;
-background: url(../images/extlink.gif) no-repeat 100% 50%;
-zoom: 1;
+	white-space: nowrap;
+	padding-right: 15px;
+	background: url(../images/extlink.gif) no-repeat 100% 50%;
+	zoom: 1;
 }
 
 input, select, textarea, button {
@@ -67,7 +67,7 @@ input, select, textarea, button {
     border: 0;
 }
 select {
-   padding: 2px 2px 2px 0;
+	padding: 2px 2px 2px 0;
 }
 textarea {
 	width: 340px;
@@ -79,31 +79,31 @@ input:focus, select:focus, textarea:focus {
 }
 
 table.featureInfo, table.featureInfo td, table.featureInfo th {
-        border:1px solid #ddd;
-        border-collapse:collapse;
-        margin:0;
-        padding:0;
-        font-size: 90%;
-        padding:.2em .1em;
-    }
-    table.featureInfo th {
-        padding:.2em .2em;
-        font-weight:bold;
-        background:#eee;
-    }
-    table.featureInfo td{
-        background:#fff;
-    }
-    table.featureInfo tr.odd td{
-        background:#eee;
-    }
-    table.featureInfo caption{
-        text-align:left;
-        font-size:100%;
-        font-weight:bold;
-        text-transform:uppercase;
-        padding:.2em .2em;
-    }
+	border:1px solid #ddd;
+	border-collapse:collapse;
+	margin:0;
+	padding:0;
+	font-size: 90%;
+	padding:.2em .1em;
+}
+table.featureInfo th {
+	padding:.2em .2em;
+	font-weight:bold;
+	background:#eee;
+}
+table.featureInfo td{
+	background:#fff;
+}
+table.featureInfo tr.odd td{
+	background:#eee;
+}
+table.featureInfo caption{
+	text-align:left;
+	font-size:100%;
+	font-weight:bold;
+	text-transform:uppercase;
+	padding:.2em .2em;
+}
 
 
 
@@ -120,7 +120,7 @@ table.featureInfo, table.featureInfo td, table.featureInfo th {
     font-size: small;
 }
 .error {
-    
+
     color: #f71bbc;
     font-weight: bold;
 }
@@ -155,9 +155,9 @@ table.featureInfo, table.featureInfo td, table.featureInfo th {
 
 
 #mainspectrogramContainer, #mainspectrogramSplash {
-	padding: 5px 15px 15px 15px;
+	padding: 5px 10px;
 	border-radius: 5px;
-	height:305px;
+	height:325px;
 	background: #545454; /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU0NTQ1NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMzMzMzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -169,15 +169,17 @@ table.featureInfo, table.featureInfo td, table.featureInfo th {
 	background: linear-gradient(to bottom,  #545454 0%,#333333 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#333333',GradientType=0 ); /* IE6-8 */
 
-	
+
 	color: #aaaaaa;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
-
+#mainspectrogramContainer {
+	font-size: 12px;
+}
 #mainspectrogramLegend {
 	background: url('../images/spectrogram_legend.png') no-repeat;
 	width: 50px;
-height: 240px; /*Height must be stepcarousel height*/
+	height: 240px; /*Height must be stepcarousel height*/
 	float:left;
 	border: 5px solid #cccccc;	
 	border-right: 0px;
@@ -187,32 +189,47 @@ height: 240px; /*Height must be stepcarousel height*/
 #mainspectrogramPicker {
 	margin-left: 50px;
 	padding: 6px;
+	height: 23px;
+	clear: both;
 }
 #mainspectrogram {
+	
+	border-radius: 5px;
 	margin-top: 6px;
+	background-color: #3e3e3e;
+}
+
+#sliderContainer {
+	width: 400px;
+	margin-top: 5px;
+}
+#mainspectrogramPicker div.inline {
+	float: left;
+	margin-left: 10px;
 }
 
 .stepcarousel{
-/* NO PADDING */
-position: relative; /*leave this value alone*/
-overflow: scroll; /*leave this value alone*/
-height: 260px; /*Height should enough to fit largest content's height*/
+	/* NO PADDING */
+	position: relative; /*leave this value alone*/
+	overflow: scroll; /*leave this value alone*/
+	height: 280px; /*Height should enough to fit largest content's height*/
 }
 
 .stepcarousel .belt{
-position: absolute; /*leave this value alone*/
-left: 0;
-top: 0;
+	position: absolute; /*leave this value alone*/
+	left: 0;
+	top: 0;
 
 }
 .panelinfo {
 }
 
 .stepcarousel .panel{
-float: left; /*leave this value alone*/
-overflow: hidden; /*clip content that go outside dimensions of holding panel DIV*/
-/* width: 250px; Width of each panel holding each content. If removed, widths should be individually defined on each content DIV then. */
+	float: left; /*leave this value alone*/
+	overflow: hidden; /*clip content that go outside dimensions of holding panel DIV*/
+	/* width: 250px; Width of each panel holding each content. If removed, widths should be individually defined on each content DIV then. */
 }
+
 
 .stepcarousel .panel a{
 	cursor: crosshair;
@@ -239,7 +256,7 @@ a.controls {
 
 #floatingTitleDiv {
 	float: left;
-	margin-top: 30px;
+	margin-top: 45px;
 	width: 700px;
 }
 #logo {

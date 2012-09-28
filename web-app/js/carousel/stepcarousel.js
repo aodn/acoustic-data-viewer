@@ -3,7 +3,7 @@
 //** Usage Terms: http://www.dynamicdrive.com/notice.htm
 //** Current version 1.9 (July 28th, 10'): See http://www.dynamicdrive.com/dynamicindex4/stepcarouselchangelog.txt for details
 
-
+jQuery.noConflict();
 
 var stepcarousel = {
 	ajaxloadingmsg: '', //customize HTML to show while fetching Ajax content

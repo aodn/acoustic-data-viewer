@@ -9,7 +9,7 @@ class Acoustic_RecordingsController {
 		
 		if (params.containsKey('acu_specId') && params.containsKey('x_coord')) {			
 			// acu_specId is the Acoustic_Spectrogram id
-			
+			//print params
 			def acoustic_SpectrogramInstance = Acoustic_Spectrograms.get(params.acu_specId)
 			def acoustic_DeploymentInstance = Acoustic_Deployments.get(acoustic_SpectrogramInstance.acousticDeployFk)
 			//print acoustic_DeploymentInstance.dump()
@@ -18,11 +18,9 @@ class Acoustic_RecordingsController {
 			if (acoustic_SpectrogramInstance) {
 				
 				// findby acoustic_Spectrogram id and the pixel index
-				acoustic_recordingsList = Acoustic_Recordings.findByAcousticSpecFkAndXCoord(params.acu_specId,params.x_coord)
+				acoustic_recordingsList = Acoustic_Recordings.findByAcousticSpecFkAndXCoord(params.acu_specId,params.x_coord)				
 				
-				
-				if (acoustic_recordingsList) {				
-					print acoustic_recordingsList.dump()
+				if (acoustic_recordingsList) {			
 
 					def trimmed_filename = acoustic_recordingsList.filename.trim()
 					def pos = trimmed_filename.lastIndexOf('.');
@@ -30,8 +28,10 @@ class Acoustic_RecordingsController {
 
 					// path to files
 					def path = acoustic_DeploymentInstance.dataPath.replaceAll('/$', "") // remove trailing slash	
+					path = path + "/" + acoustic_SpectrogramInstance.subdirectory.replaceAll('/$', "")
+					
 					def wavPath = path + "/raw/"
-					def specUrl =  path + '/recording_spec/' + trimmed_filename		
+					def specUrl =  path + '/recording_spec/' + trimmed_filename + "SP.png"
 					def audioUrl = path + '/recording_wave/' + trimmed_filename
 					
 					/*
@@ -40,7 +40,7 @@ class Acoustic_RecordingsController {
 						recording_spec/  with one spectrogram image for each recording
 						recording_wave/  with a waveform image for each recording
 					*/
-					map = [ 'specUrl':specUrls ,'audioUrl':audioUrls, 'wavPath': wavPath, 'dateTime': acoustic_recordingsList.timeRecordingStart ]
+					map = [ 'specUrl':specUrl ,'audioUrl':audioUrl, 'wavPath': wavPath, 'dateTime': acoustic_recordingsList.timeRecordingStart ]
 				}
 				
 			}

@@ -170,7 +170,7 @@ table.featureInfo caption{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#333333',GradientType=0 ); /* IE6-8 */
 
 
-	color: #aaaaaa;
+	color: #EEEEEE;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
 #mainspectrogramContainer {
@@ -181,8 +181,10 @@ table.featureInfo caption{
 	width: 50px;
 	height: 240px; /*Height must be stepcarousel height*/
 	float:left;
-	border: 5px solid #cccccc;	
+	border: 2px solid white;	
 	border-right: 0px;
+	
+	box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.8);
 	border-radius: 4px ;
 }
 
@@ -195,8 +197,16 @@ table.featureInfo caption{
 #mainspectrogram {
 	
 	border-radius: 5px;
-	margin-top: 6px;
-	background-color: #3e3e3e;
+	/*margin-top: 6px;*/
+background: #545454; 
+	
+	box-shadow: 3px 2px 5px rgba(0,0,0, 0.8);
+	border-radius: 0px 0px 4px 4px ;
+}
+.panelinfo {
+	border-left: 1px solid #666666;
+	padding: 2px;
+	font-size: 10px;
 }
 
 #sliderContainer {

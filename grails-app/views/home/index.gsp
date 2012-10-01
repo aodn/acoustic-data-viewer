@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="${resource(dir: 'css/ui-darkness', file: 'jquery-ui-1.8.23.custom.css')}" type="text/css">
 	<script type="text/javascript" src="${resource(dir:'js',file:'jquery-1.7.1.min.js')}"></script>
 	<script type="text/javascript" src="${resource(dir:'js',file:'jquery-ui-1.8.23.custom.min.js')}"></script>
+	<script type="text/javascript" src="${resource(dir:'js',file:'jquery.onImagesLoad.min.js')}"></script>		
 	<script type="text/javascript" src="${resource(dir:'js/carousel',file:'stepcarousel.js')}"></script>
 	<script type="text/javascript" src="${resource(dir:'js',file:'ddslick.js')}"></script>
 	<script type="text/javascript" src="${resource(dir:'js',file:'application.js')}"></script>
@@ -92,7 +93,8 @@
 		<div id="detailsaudio" style="display:none"></div>
 		
 		
-		<div id="detailspectrogram" ><img />
+		<div id="detailspectrogram" >
+		  
 		</div>
 		  
 		</div>

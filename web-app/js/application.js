@@ -29,7 +29,24 @@ jQuery(document).ready(function () {
 
 			}			
 		}   
-	});		
+	});	
+	
+	// onimageload plugin
+	jQuery(function(){ 
+		jQuery('.imageSpec').onImagesLoad({ 
+			each : eachItemLoaded//, 
+		//all : allImgsLoaded 
+		}); 
+		//the 'each' callback is invoked once for each item that $('.imageSection') encapsulates 
+		//i.e. $('.imageSection').length == 2 here, so the 'each' callback will be invoked twice 
+		function eachItemLoaded(domObject){ 
+			//note: this == domObject. domObject will be the <div class="imageSection" /> that has just finished loading all of its images 
+			jQuery(domObject).prepend('<div class="loaded">All images have loaded within item ' + displayTxt(domObject) + '</div>'); 
+		}
+	});
+
+	
+
 	
 	
 });
@@ -116,12 +133,19 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 			x_coord: clickLeftPosition
 		},
 		dataType: "json",
-		success: function(msg) { 	
-			if (msg.length > 0) {
-				jQuery('#mainspectrogramClickDetails').html( "<BR>" + (clickLeftPosition) + " Details for '" + msg.dateTime + "'");
+		success: function(msg) { 
+			
+			jQuery('#detailspectrogram img').remove(); // kill old spec images
+			
+			if (msg.specUrl) {				
+				
+				//jQuery('#mainspectrogramClickDetails').html( "<BR>Loading details for '" + msg.dateTime + "'");
+				
 				if (msg.specUrl) {
-					console.log(msg.specUrl);
-					jQuery('#detailspectrogram img').attr("src", msg.specUrl);
+					jQuery('#detailspectrogram').append('<img src="' + msg.specUrl + '" onloadstart ="showProgressBar()" onprogress="updateProgressBar(event)" onloadend="finishedProgressBar()" />');
+					//jQuery('#detailspectrogram img').attr("onload", photoLoaded(this));
+					//jQuery('#detailspectrogram img').attr("src", msg.specUrl);	
+					//jQuery('#detailspectrogram img').show();
 				}
 			}
 			else {
@@ -133,7 +157,23 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 	});
 }
 
-
+function photoLoaded() {
+	console.log(this.complete);
+}
+function showProgressBar() {
+	jQuery('#mainspectrogramClickDetails').html("Loading ...");
+}
+            
+function updateProgressBar(e) {
+	if (e.lengthComputable)
+		jQuery('#mainspectrogramClickDetails').html(e.loaded / e.total * 100);
+	else
+		jQuery('#mainspectrogramClickDetails').html("Preparing to download ...");
+}
+            
+function finishedProgressBar() {
+	jQuery('#mainspectrogramClickDetails').html("Downloaded");
+}
 
 function handleSpectroClick(e,spectrogramId) {
 

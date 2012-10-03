@@ -155,9 +155,9 @@ table.featureInfo caption{
 
 
 #mainspectrogramContainer, #mainspectrogramSplash {
-	padding: 5px 10px;
+	padding: 10px;
 	border-radius: 5px;
-	height:325px;
+	
 	background: #545454; /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU0NTQ1NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMzMzMzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -209,6 +209,13 @@ background: #545454;
 	font-size: 10px;
 }
 
+#detailspectrogram img {
+	float: left;
+	box-shadow: 3px 2px 5px rgba(0,0,0, 0.8);
+	border-radius: 4px ;
+	background-color: white;
+}
+
 #sliderContainer {
 	width: 400px;
 	margin-top: 5px;
@@ -222,7 +229,7 @@ background: #545454;
 	/* NO PADDING */
 	position: relative; /*leave this value alone*/
 	overflow: scroll; /*leave this value alone*/
-	height: 280px; /*Height should enough to fit largest content's height*/
+	 /*Height specified in index.gsp*/
 }
 
 .stepcarousel .belt{
@@ -244,7 +251,10 @@ background: #545454;
 .stepcarousel .panel a{
 	cursor: crosshair;
 }
-
+.lazyWrapper{
+	display:table-cell;
+    vertical-align: middle;
+}
 
 a.controls {
 	padding: 0px 5px;
@@ -266,22 +276,46 @@ a.controls {
 
 #floatingTitleDiv {
 	float: left;
-	margin-top: 45px;
 	width: 700px;
 }
 #logo {
-	float: left;
-	margin: 15px;
+	float: left;	
+	margin-top: 20px;
 }
 
 #sitePicker {
 	float: left;
-	margin-top: 6px;
 	margin-left: 20px;
 }
 #title {
-	float: left;
-	margin-left: 40px;
-	margin-top: 15px;	
+	margin-bottom: 2px;
+	margin-left: 30px;
 	text-shadow: 1px 2px 5px #CCCCCC;
+}
+#stepcarouselLoader {
+	padding: 50px;
+	font-size: 20px;
+}
+
+
+#detailsHeader, #footer {
+	margin: 0 auto;	
+    width: 90%;
+}
+#download {
+	float: right;
+}
+.floatwrapper .first{
+	float: left;
+	width: 250px;
+}
+#footer .first{		
+	height: 150px;
+}
+#footer .text{
+	font-size: 0.8em;
+	height: 50px;
+}
+#footer p{
+	padding-top: 13px;
 }

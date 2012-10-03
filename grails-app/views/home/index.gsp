@@ -8,11 +8,19 @@
 	<link rel="stylesheet" href="${resource(dir: 'css/ui-darkness', file: 'jquery-ui-1.8.23.custom.css')}" type="text/css">
 	<script type="text/javascript" src="${resource(dir:'js',file:'jquery-1.7.1.min.js')}"></script>
 	<script type="text/javascript" src="${resource(dir:'js',file:'jquery-ui-1.8.23.custom.min.js')}"></script>
-	<script type="text/javascript" src="${resource(dir:'js',file:'jquery.onImagesLoad.min.js')}"></script>		
+	<script type="text/javascript" src="${resource(dir:'js',file:'jquery.lazyload.min.js')}"></script>		
 	<script type="text/javascript" src="${resource(dir:'js/carousel',file:'stepcarousel.js')}"></script>
 	<script type="text/javascript" src="${resource(dir:'js',file:'ddslick.js')}"></script>
 	<script type="text/javascript" src="${resource(dir:'js',file:'application.js')}"></script>
-	
+	<script type="text/javascript" >	  
+			var specImageHeight = "${config.specImageHeight}"
+			var specDetailedImageHeight = "${config.specDetailedImageHeight}"
+	</script>
+	<style type="text/css">
+	  .stepcarousel {
+	    height: ${config.carouselHeight}px;
+	  }
+	</style>
 	<!--[if gte IE 9]>
 	  <style type="text/css">
 		.gradient {
@@ -24,16 +32,16 @@
   <body>
 
 
-	<div class="ui-layout-north" >
+	<div  >
 	  <img id="logo" src="images/IMOS_ANMN_Facility_6_logo.png" alt="IMOS ANMN Logo" width="400" />
 	  <div id="floatingTitleDiv">
 		<h1 id="title">IMOS Acoustic Data Viewer</h1>
-		 <div id="sitePicker">
 
-		  <g:select id="sitePicker" name="name" size="3"
-					from="${deployments}"
+		 <div id="sitePicker">
+		  <g:select id="sitePicker" name="name" size="3"  
+					from="${deployments}" 
 					value="${deployments?.deploymentName}"
-					optionKey="id"
+optionKey="id"
 					/>
 		</div>
 	  </div>
@@ -69,12 +77,7 @@
 			</div>
 			<div class="inline" id="sliderContainer">
 			  <div id="slider"></div>			  
-			</div>
-			<!--div id="datePicker"><input type="text" id="date-picker"> </div-->
-			
-			<!--span id="mainspectrogram-paginate" >
-			  <img src="images/chart_unselected.png" data-over="images/chart_over.png" data-select="images/chart_selected_white.png" data-moveby="1" />
-			</span-->	
+			</div>	
 		  <div class="inline">
 			<a class="controls" href="javascript:stepcarousel.stepBy('mainspectrogram', 1)" ><img src="images/fast_forward.png"  alt="Move forward one"  title="Move forward one" /></a> 
 		  </div>
@@ -82,20 +85,22 @@
 
 		<div id="mainspectrogramLegend">&nbsp;</div>
 		<div id="mainspectrogram" class="stepcarousel">
-		  <div class="belt">
+		  <div class="belt" >
 		  </div>
 		</div>
 
 	  </div>
-
-	  <p id="mainspectrogramClickDetails">&nbsp;</p>
+	  <div id="detailsHeader" class="floatwrapper" >
+		<div class="first"><p id="mainspectrogramClickDetails">&nbsp;</p>
+		</div>
+		<div id="download">download</div>
+	  </div>
+<div class="clear"></div>
 	  <div id="details" >
 		<div id="detailsaudio" style="display:none"></div>
 		
 		
-		<div id="detailspectrogram" >
-		  
-		</div>
+		<div id="detailspectrogram" ></div>
 		  
 		</div>
 		
@@ -103,7 +108,11 @@
 
 
 	</div>
-	<div class="footer" role="contentinfo"></div>
+<div class="clear"></div>
+	<div id="footer" class="floatwrapper" ><div class="first">
+<img src="images/DIISRTE_Inline-PNGSmall_200.png"></div><div class="text" ><p>You accept all risks and responsibility for losses, damages, costs and other consequences resulting directly or indirectly from using this site and any information or material available from it. If you have any concerns about the veracity of the data, please make enquiries via <a href="mailto:info@imos.org.au">info@imos.org.au</a> to be directed to the data custodian.</p></div>
+
+	</div>
 
   </body>
 </html>

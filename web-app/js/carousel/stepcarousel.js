@@ -6,7 +6,7 @@
 jQuery.noConflict();
 
 var stepcarousel = {
-	ajaxloadingmsg: '', //customize HTML to show while fetching Ajax content
+	ajaxloadingmsg: '<div id="stepcarouselLoader"><h2>Please wait.....</h2>retrieving deployment information</div>', //customize HTML to show while fetching Ajax content
 	defaultbuttonsfade: 0.4, //Fade degree for disabled nav buttons (0=completely transparent, 1=completely opaque)
 	configholder: {},
 

@@ -1,9 +1,10 @@
 package acousticviewer
 
 class HomeController {
-
-    def index() {
 	
-		[deployments: Acoustic_Deployments.list()]
+	def grailsApplication
+	
+    def index() {				
+		[deployments: Acoustic_Deployments.findByIsPrimary(true), config: grailsApplication.config]
 	}
 }

@@ -62,6 +62,7 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+		
     }
     production {
         grails.logging.jul.usebridge = false
@@ -89,4 +90,10 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+
+specImageHeight = "240"
+carouselHeight = "275"
+specDetailedImageHeight = "300"
+
 

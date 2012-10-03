@@ -1,10 +1,10 @@
 
-	
 
 
 jQuery(document).ready(function () {
 	
 	
+	/*<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 	(function(jQuery) {
 		jQuery('#spinner').ajaxStart(function() {
 			jQuery(this).fadeIn();
@@ -12,6 +12,9 @@ jQuery(document).ready(function () {
 			jQuery(this).fadeOut();
 		});
 	})(jQuery);
+	*/
+   
+   
 	
 	// stop images being draggable inside the carousel in particular
 	jQuery(document).on("mousedown", "img", function(event){ 		
@@ -23,29 +26,15 @@ jQuery(document).ready(function () {
 		width: 350,
 		selectText: "  - Choose a Site - ",
 		onSelected: function(x){
-			if (x.selectedData.value != "") {				
-				stepcarousel.loadcontent('mainspectrogram','acoustic_Spectrograms/list?deployment=' + x.selectedData.value);						
+			if (x.selectedData.value != "") {
 				toggleHelp();
+				stepcarousel.loadcontent('mainspectrogram','acoustic_Spectrograms/list?deployment=' + x.selectedData.value);						
+				
 
 			}			
 		}   
-	});	
-	
-	// onimageload plugin
-	jQuery(function(){ 
-		jQuery('.imageSpec').onImagesLoad({ 
-			each : eachItemLoaded//, 
-		//all : allImgsLoaded 
-		}); 
-		//the 'each' callback is invoked once for each item that $('.imageSection') encapsulates 
-		//i.e. $('.imageSection').length == 2 here, so the 'each' callback will be invoked twice 
-		function eachItemLoaded(domObject){ 
-			//note: this == domObject. domObject will be the <div class="imageSection" /> that has just finished loading all of its images 
-			jQuery(domObject).prepend('<div class="loaded">All images have loaded within item ' + displayTxt(domObject) + '</div>'); 
-		}
-	});
-
-	
+	});		
+		
 
 	
 	
@@ -81,12 +70,20 @@ stepcarousel.setup({
 	
 	oninit:function(){
 		// oninit is for reloads as well
-		loadCarouselSlider();		
+		loadCarouselSlider();
+		lazyload();
 	}
 });
 
 
-
+function lazyload() {
+	
+	// lazy load of all images with class lazy.
+   // images require a data-original="realimage.png" attribute
+   jQuery('img.lazy').lazyload({
+		effect: "fadeIn"
+	});
+}
 
 function loadCarouselSlider() {
 	
@@ -108,7 +105,7 @@ function loadCarouselSlider() {
 
 
 function toggleHelp(e,show) {
-	if (show) {
+	if (show != undefined) {
 		jQuery('#mainspectrogramSplash').show();
 		jQuery('#mainspectrogramContainer').hide();
 	}
@@ -116,9 +113,9 @@ function toggleHelp(e,show) {
 		jQuery('#mainspectrogramSplash').hide();
 		jQuery('#mainspectrogramContainer').show();
 	}
-	if (e != undefined) {
-		e.preventDefault();
-	}
+	//if (e != undefined) {
+	//	e.preventDefault();
+	//}
 	
 }
 
@@ -139,13 +136,12 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 			
 			if (msg.specUrl) {				
 				
-				//jQuery('#mainspectrogramClickDetails').html( "<BR>Loading details for '" + msg.dateTime + "'");
+				jQuery('#mainspectrogramClickDetails').html( "<BR>Loading details for '" + msg.dateTime + "'");
 				
 				if (msg.specUrl) {
-					jQuery('#detailspectrogram').append('<img src="' + msg.specUrl + '" onloadstart ="showProgressBar()" onprogress="updateProgressBar(event)" onloadend="finishedProgressBar()" />');
-					//jQuery('#detailspectrogram img').attr("onload", photoLoaded(this));
-					//jQuery('#detailspectrogram img').attr("src", msg.specUrl);	
-					//jQuery('#detailspectrogram img').show();
+					jQuery('#detailspectrogram').append('<img class="lazy" src="images/loading640x400.gif" height="' + specDetailedImageHeight +'" data-original="' + msg.specUrl + '" alt="spectrogram" />');
+					lazyload();	
+					
 				}
 			}
 			else {
@@ -158,7 +154,7 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 }
 
 function photoLoaded() {
-	console.log(this.complete);
+	console.log(jQuery('#detailspectrogram img'));
 }
 function showProgressBar() {
 	jQuery('#mainspectrogramClickDetails').html("Loading ...");

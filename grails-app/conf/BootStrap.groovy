@@ -4,14 +4,8 @@ import acousticviewer.Acoustic_Spectrograms
 class BootStrap {
 
     def init = { servletContext ->
-		
-		/*JSON.registerObjectMarshaller(Acoustic_Spectrograms) {
-            def returnArray = [:]
-            returnArray['timeStart'] = it.timeStart
-            returnArray['filename'] = it.filename
-            return returnArray
-        }*/
-		
+
+		TimeZone.setDefault(TimeZone.getTimeZone("UTC"))
     }
     def destroy = {
     }

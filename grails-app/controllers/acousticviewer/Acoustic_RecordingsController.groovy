@@ -32,7 +32,7 @@ class Acoustic_RecordingsController {
 					
 					def wavPath = path + "/raw/"
 					def specUrl =  path + '/recording_spec/' + trimmed_filename + "SP.png"
-					def audioUrl = path + '/recording_wave/' + trimmed_filename
+					def audioUrl = path + '/recording_wave/' + trimmed_filename + "WF.png"
 					
 					/*
 						raw/   for all the raw sound recordings

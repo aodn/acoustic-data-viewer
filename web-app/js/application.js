@@ -28,9 +28,7 @@ jQuery(document).ready(function () {
 		onSelected: function(x){
 			if (x.selectedData.value != "") {
 				toggleHelp();
-				stepcarousel.loadcontent('mainspectrogram','acoustic_Spectrograms/list?deployment=' + x.selectedData.value);						
-				
-
+				stepcarousel.loadcontent('mainspectrogram','acoustic_Spectrograms/list?deployment=' + x.selectedData.value);					
 			}			
 		}   
 	});		
@@ -66,24 +64,27 @@ stepcarousel.setup({
 	},
 	onslide:function(){
 	// update mainspectrogram_clickDetails with start date?
+	console.log('get time at this point'); 
 	},
 	
 	oninit:function(){
 		// oninit is for reloads as well
 		loadCarouselSlider();
-		lazyload();
+		lazyload('.lazyWrapper');
 	}
 });
 
 
-function lazyload() {
+function lazyload(parentSelector) {
 	
 	// lazy load of all images with class lazy.
    // images require a data-original="realimage.png" attribute
-   jQuery('img.lazy').lazyload({
+   jQuery(parentSelector + ' img.lazy').lazyload({
 		effect: "fadeIn"
 	});
+	
 }
+
 
 function loadCarouselSlider() {
 	
@@ -137,39 +138,31 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 			if (msg.specUrl) {				
 				
 				jQuery('#mainspectrogramClickDetails').html( "<BR>Loading details for '" + msg.dateTime + "'");
-				
-				if (msg.specUrl) {
-					jQuery('#detailspectrogram').append('<img class="lazy" src="images/loading640x400.gif" height="' + specDetailedImageHeight +'" data-original="' + msg.specUrl + '" alt="spectrogram" />');
-					lazyload();	
+				jQuery('#detailspectrogram').append('<img class="lazy" src="images/loading640x400.gif" height="' + specDetailedImageHeight +'" data-original="' + msg.specUrl + '" />');
+				loadDetailControls(clickLeftPosition,spectrogramId);
+				lazyload('#detailspectrogram');	
+				jQuery('.detailsOptional').show(); // options when details spec is sucessfully loaded
 					
-				}
 			}
 			else {
 				// This should never happen.
 				jQuery('#mainspectrogramClickDetails').html( "Detailed Spectrograms and data are not available for this time period");
-			}					
+				jQuery('.detailsOptional').hide(); 
+			}
+			
+			
 			
 		}
 	});
 }
+function loadDetailControls(clickLeftPosition,spectrogramId) {
+	// handle errors in loadDetails
+	var pos = parseInt(clickLeftPosition);
+	jQuery('#detailsControlBack').attr('href',"javascript:loadDetails(" + (pos -1) + ", '" + spectrogramId + "')");	
+	jQuery('#detailsControlForward').attr('href',"javascript:loadDetails(" + (pos +1) + ", '" + spectrogramId + "')");
+	
+}
 
-function photoLoaded() {
-	console.log(jQuery('#detailspectrogram img'));
-}
-function showProgressBar() {
-	jQuery('#mainspectrogramClickDetails').html("Loading ...");
-}
-            
-function updateProgressBar(e) {
-	if (e.lengthComputable)
-		jQuery('#mainspectrogramClickDetails').html(e.loaded / e.total * 100);
-	else
-		jQuery('#mainspectrogramClickDetails').html("Preparing to download ...");
-}
-            
-function finishedProgressBar() {
-	jQuery('#mainspectrogramClickDetails').html("Downloaded");
-}
 
 function handleSpectroClick(e,spectrogramId) {
 

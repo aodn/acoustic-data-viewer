@@ -3,7 +3,7 @@
   <div class="panel" style="width:${item.width}px;" >
 	<a href="#" onclick="handleSpectroClick(event,'${item.id}');return false;" >
 	  <div class="lazyWrapper" style="width:${item.width}px;height:${grailsApplication.config.specImageHeight}px"   >
-	  <img  id="acoustic_Spectrogram-${item.id}" src="images/loaderBelt.gif" data-original="${deployment.dataPath}/${item.subdirectory}/${item.filename}"  />
+	  <img class="lazy" id="acoustic_Spectrogram-${item.id}" src="images/loaderBelt.gif" data-original="${deployment.dataPath}/${item.subdirectory}/${item.filename}"  />
 	  </div>
 	</a>
 	<div class="panelinfo"><g:formatDate date="${item.timeStart}" format="E dd-MM-yyyy" /><BR/>

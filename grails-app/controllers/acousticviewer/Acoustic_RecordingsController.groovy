@@ -40,7 +40,7 @@ class Acoustic_RecordingsController {
 						recording_spec/  with one spectrogram image for each recording
 						recording_wave/  with a waveform image for each recording
 					*/
-					map = [ 'specUrl':specUrl ,'audioUrl':audioUrl, 'wavPath': wavPath, 'dateTime': acoustic_recordingsList.timeRecordingStart ]
+					map = [ 'specUrl':specUrl ,'audioUrl':audioUrl, 'wavPath': wavPath, 'dateTime': acoustic_recordingsList.timeRecordingStart]
 				}
 				
 			}

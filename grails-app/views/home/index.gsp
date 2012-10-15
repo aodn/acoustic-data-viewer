@@ -61,8 +61,8 @@ optionKey="id"
 		  <h2>Using the IMOS Acoustic data viewer:</h2>
 		  <ol>
 			<li>Choose a Site/deployment from the picker above</li>			
-			<li>You will be presented a set of spectrogram for the deployment </li>			
-			<li>Clicking on a spectrogram will open below an expanded view of the time period</li>	
+			<li>You will be presented a set of spectrograms for the deployment </li>			
+			<li>Clicking on a spectrogram will open below an expanded view of the chosen time period</li>	
 			<li>...</li>
 		  </ol>
 		  
@@ -91,9 +91,15 @@ optionKey="id"
 
 	  </div>
 	  <div id="detailsHeader" class="floatwrapper" >
-		<div class="first"><p id="mainspectrogramClickDetails">&nbsp;</p>
+		<div class="first" ><p id="mainspectrogramClickDetails">&nbsp;</p>
 		</div>
-		<div id="download">download</div>
+		<div class="detailsOptional" id="detailsControls" style="display:none;" >
+			  <a  id="detailsControlBack" class="controls" href="javascript:loadDetails(-1, 'specid')">
+				<img src="images/rewind.png" alt="Move back one" title="Move back one time period" /></a>
+			  <a id="detailsControlForward" class="controls" href="javascript:loadDetails(+1, 'specid')">
+				<img src="images/fast_forward.png" alt="Move forward one" title="Move forward one time period" /></a>
+		</div>
+		<div class="detailsOptional" id="download" style="display:none;" >download</div>
 	  </div>
 <div class="clear"></div>
 	  <div id="details" >

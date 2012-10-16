@@ -86,10 +86,11 @@
 		</div>
 
 	  </div>
+	  <div id="errorDetails" style="display:none;" >Detailed Spectrograms and data are not available for this time period</div>
 	  <div id="detailsHeader" style="display:none">
 		<div class="first"  id="mainspectrogramClickDetails">&nbsp;</div>
 		
-		<div class="detailsOptional" id="detailsControls" style="display:none;" >
+		<div class="detailsOptional smaller" id="detailsControls"  >
 			  <a  id="detailsControlBack" class="controls" href="javascript:loadDetails(-1, 'specid')">
 				<img src="images/rewind.png" alt="Move back one" title="Move back one time period" /></a>Adjust Time
 			  <a id="detailsControlForward" class="controls" href="javascript:loadDetails(+1, 'specid')">

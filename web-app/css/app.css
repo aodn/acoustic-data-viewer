@@ -148,6 +148,9 @@ table.featureInfo caption{
 .small {
     font-size: small;
 }
+.smaller {
+    font-size: smaller;
+}
 .error {
 
     color: #f71bbc;
@@ -292,7 +295,7 @@ background: #545454;
 }
 
 a.controls {
-	padding: 0px 5px;
+	padding: 0px 2px;
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -334,9 +337,10 @@ a.controls {
 	font-size: 20px;
 }
 
-#detailsHeader  {
+#detailsHeader, #errorDetails {
 	height: 30px;
-	margin: 20px 10px;
+	margin: 20px 10px;	
+	text-shadow: 1px 1px 0 #EFEFEF;
 	
 }
 

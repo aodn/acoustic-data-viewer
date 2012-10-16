@@ -132,10 +132,10 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 		},
 		dataType: "json",
 		success: function(msg) { 
-			
-			//jQuery('#detailsHeader img').remove(); // kill old images
-			
+						
 			if (msg.specUrl) {				
+				
+				jQuery('#errorDetails').hide();
 				
 				jQuery('#mainspectrogramClickDetails').html( "Detailed information for <b>'" + msg.dateTime + "'</b>");				
 				loadDetailControls(clickLeftPosition,spectrogramId);
@@ -151,7 +151,7 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 			}
 			else {
 				// This should never happen.
-				jQuery('#mainspectrogramClickDetails').html( "Detailed Spectrograms and data are not available for this time period");
+				jQuery('#errorDetails').hide().show("slow");
 				jQuery('.detailsOptional, #detailsHeader').hide(); 
 			}
 			
@@ -160,20 +160,8 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 		}
 	});
 }
- function download() {
-	 
-	 //jQuery.ajax({
-		//type: "POST",
-		location =  "download/?" + jQuery('input:hidden[name=downloadDetailsAsJSON]').val();
-		//data: {
-		//	currentFiles: jQuery('input:hidden[name=downloadDetailsAsJSON]').val()
-		//},
-		//dataType: "json",
-		//success: function(msg) { 
-		//	return msg
-			
-		//}
-	//});
+ function download() {	 
+		location =  "download/?" + jQuery('input:hidden[name=downloadDetailsAsJSON]').val();		
  }
 
 

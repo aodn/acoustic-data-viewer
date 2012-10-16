@@ -17,6 +17,8 @@ html, body {
 	background: -ms-radial-gradient(center, ellipse cover,  #eeeeee 51%,#cccccc 100%); /* IE10+ */
 	background: radial-gradient(ellipse at center,  #eeeeee 51%,#cccccc 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+	
+	
 
 
 }
@@ -26,7 +28,8 @@ table {
 	font-size: 11px;
 }
 
-h1{  color:#3399CC; font-size: 20px; font-weight: bold;  white-space:nowrap; }
+h1{   
+	 font-size: 20px; font-weight: bold;  white-space:nowrap; }
 
 h2 { color:#3399CC; font-size: 16px; font-weight: bold; white-space:nowrap; clear: both}
 h3 { color:#3399CC; font-size: 13px; font-weight: bold; margin-bottom:5px;margin-top:6px; white-space:nowrap; clear: both}
@@ -55,12 +58,38 @@ a[rel="external"], a.external {
 	zoom: 1;
 }
 
-input, select, textarea, button {
+input, select, textarea {
     background-color: #fcfcfc;
     border: 1px solid #ccc;
     font: 11px verdana, arial, helvetica, sans-serif;
     margin: 2px 0;
     padding: 2px 4px;
+}
+
+button {
+    background-color: #3399CC;
+    background-image: -moz-linear-gradient(center top , #3399CC 0%, #376FE0 50%, #1A5AD9 50%, #2463DE 100%);
+    border-color: #1F58CC #1B4DB3 #174299;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 0 2px 0 rgba(57, 140, 255, 0.8) inset;
+    color: #FFFFFF;
+    font: bold 12px/1 "helvetica neue",helvetica,arial,sans-serif;
+    padding: 7px 0;
+    text-shadow: 0 -1px 1px #1A5AD9;
+    width: 150px;
+}
+button:hover {
+    background-color: #5D89E8;
+    background-image: -moz-linear-gradient(center top , #5D89E8 0%, #2261E0 50%, #044BD9 50%, #0D53DE 100%);
+    cursor: pointer;
+}
+button:active {
+    border-color: #1B4DB3 #174299 #133780;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 0 5px 2px #1A47A0 inset, 0 1px 0 #EEEEEE;
 }
 
 .readonly {
@@ -172,6 +201,7 @@ table.featureInfo caption{
 
 	color: #EEEEEE;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+	text-shadow: 1px 1px 0 #333333;
 }
 #mainspectrogramContainer {
 	font-size: 12px;
@@ -207,13 +237,18 @@ background: #545454;
 	border-left: 1px solid #666666;
 	padding-left: 5px;
 	font-size: 10px;
+	
+}
+#details div {
+	float: left;
 }
 
-#detailspectrogram img {
+#details div img {
 	float: left;
 	box-shadow: 3px 2px 5px rgba(0,0,0, 0.8);
 	border-radius: 4px ;
 	background-color: white;
+	margin-right: 20px;
 }
 
 #sliderContainer {
@@ -280,7 +315,8 @@ a.controls {
 }
 #logo {
 	float: left;	
-	margin-top: 10px;
+	margin-top: 30px;
+	margin-left: 30px;
 }
 
 #sitePicker {
@@ -298,24 +334,41 @@ a.controls {
 	font-size: 20px;
 }
 
-
-#detailsHeader, #footer {
-	margin: 0 auto;	
-    width: 90%;
+#detailsHeader  {
+	height: 30px;
+	margin: 20px 10px;
+	
 }
+
+#detailsHeader div {
+	float: left;	
+	height: 30px;
+	margin-right: 30px;
+}
+#mainspectrogramClickDetails {
+	margin-top: 10px;
+}
+#detailsControls {
+	margin-top: 5px;
+}
+
 #download {
 	float: right;
 }
-.floatwrapper .first{
-	float: left;
-	width: 250px;
+
+#footer {
+	margin: 0 auto;	
+    width: 90%;
 }
-#footer .first{		
+#footer .first{
+	float: left;
+	width: 250px;	
 	height: 150px;
 }
 #footer .text{
 	font-size: 0.8em;
 	height: 50px;
+	text-shadow: 1px 1px 0 #EFEFEF;
 }
 #footer p{
 	padding-top: 13px;

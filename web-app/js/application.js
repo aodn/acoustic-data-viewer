@@ -133,21 +133,26 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 		dataType: "json",
 		success: function(msg) { 
 			
-			jQuery('#detailspectrogram img').remove(); // kill old spec images
+			//jQuery('#detailsHeader img').remove(); // kill old images
 			
 			if (msg.specUrl) {				
 				
-				jQuery('#mainspectrogramClickDetails').html( "<BR>Loading details for '" + msg.dateTime + "'");
-				jQuery('#detailspectrogram').append('<img class="lazy" src="images/loading640x400.gif" height="' + specDetailedImageHeight +'" data-original="' + msg.specUrl + '" />');
+				jQuery('#mainspectrogramClickDetails').html( "Detailed information for <b>'" + msg.dateTime + "'</b>");				
 				loadDetailControls(clickLeftPosition,spectrogramId);
-				lazyload('#detailspectrogram');	
-				jQuery('.detailsOptional').show(); // options when details spec is sucessfully loaded
+				
+				jQuery('#detailspectrogram').html('<img class="lazy" src="images/loading640x400.gif" height="' + specDetailedImageHeight +'" data-original="' + msg.specUrl + '" />');
+				lazyload('#detailspectrogram');
+				jQuery('#detailsAudioImage').html('<img class="lazy" src="images/loading640x400.gif" height="' + specDetailedImageHeight +'" data-original="' + msg.audioUrl + '" />');
+				lazyload('#detailsAudioImage');
+				
+				jQuery('.detailsOptional, #detailsHeader').show(); // options when details are sucessfully loaded
+				jQuery('input:hidden[name=downloadDetailsAsJSON]').val(jQuery.param(msg));
 					
 			}
 			else {
 				// This should never happen.
 				jQuery('#mainspectrogramClickDetails').html( "Detailed Spectrograms and data are not available for this time period");
-				jQuery('.detailsOptional').hide(); 
+				jQuery('.detailsOptional, #detailsHeader').hide(); 
 			}
 			
 			
@@ -155,6 +160,24 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 		}
 	});
 }
+ function download() {
+	 
+	 //jQuery.ajax({
+		//type: "POST",
+		location =  "download/?" + jQuery('input:hidden[name=downloadDetailsAsJSON]').val();
+		//data: {
+		//	currentFiles: jQuery('input:hidden[name=downloadDetailsAsJSON]').val()
+		//},
+		//dataType: "json",
+		//success: function(msg) { 
+		//	return msg
+			
+		//}
+	//});
+ }
+
+
+
 function loadDetailControls(clickLeftPosition,spectrogramId) {
 	// handle errors in loadDetails
 	var pos = parseInt(clickLeftPosition);

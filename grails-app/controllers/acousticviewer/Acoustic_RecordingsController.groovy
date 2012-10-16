@@ -25,7 +25,9 @@ class Acoustic_RecordingsController {
 					def trimmed_filename = acoustic_recordingsList.filename.trim()
 					def pos = trimmed_filename.lastIndexOf('.');
 					def extension = trimmed_filename.substring(pos+1)
-
+					
+					def downloadFolderDescripter = acoustic_DeploymentInstance.siteCode + "-" + acoustic_DeploymentInstance.curtinId
+					
 					// path to files
 					def path = acoustic_DeploymentInstance.dataPath.replaceAll('/$', "") // remove trailing slash	
 					path = path + "/" + acoustic_SpectrogramInstance.subdirectory.replaceAll('/$', "")
@@ -40,7 +42,7 @@ class Acoustic_RecordingsController {
 						recording_spec/  with one spectrogram image for each recording
 						recording_wave/  with a waveform image for each recording
 					*/
-					map = [ 'specUrl':specUrl ,'audioUrl':audioUrl, 'wavPath': wavPath, 'dateTime': acoustic_recordingsList.timeRecordingStart]
+					map = [ 'specUrl':specUrl ,'audioUrl':audioUrl, 'wavPath': wavPath, 'dateTime': acoustic_recordingsList.timeRecordingStart, 'downloadFolderDescripter': downloadFolderDescripter]
 				}
 				
 			}

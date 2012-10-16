@@ -38,11 +38,7 @@
 		<h1 id="title">IMOS Acoustic Data Viewer</h1>
 
 		 <div id="sitePicker">
-		  <g:select id="sitePicker" name="name" size="3"  
-					from="${deployments}" 
-					value="${deployments?.deploymentName}"
-optionKey="id"
-					/>
+		  <g:select id="sitePicker" name="name" size="3"  from="${deployments}" value="${deployments?.deploymentName}"	optionKey="id"	/>
 		</div>
 	  </div>
 	  
@@ -90,22 +86,26 @@ optionKey="id"
 		</div>
 
 	  </div>
-	  <div id="detailsHeader" class="floatwrapper" >
-		<div class="first" ><p id="mainspectrogramClickDetails">&nbsp;</p>
-		</div>
+	  <div id="detailsHeader" style="display:none">
+		<div class="first"  id="mainspectrogramClickDetails">&nbsp;</div>
+		
 		<div class="detailsOptional" id="detailsControls" style="display:none;" >
 			  <a  id="detailsControlBack" class="controls" href="javascript:loadDetails(-1, 'specid')">
-				<img src="images/rewind.png" alt="Move back one" title="Move back one time period" /></a>
+				<img src="images/rewind.png" alt="Move back one" title="Move back one time period" /></a>Adjust Time
 			  <a id="detailsControlForward" class="controls" href="javascript:loadDetails(+1, 'specid')">
 				<img src="images/fast_forward.png" alt="Move forward one" title="Move forward one time period" /></a>
+		</div>	
+		<div class="detailsOptional"  style="display:none;" >
+		  <input  type="hidden" name="downloadDetailsAsJSON" />
+		  <button id="download" onclick="download();return false;" >Download</button>
 		</div>
-		<div class="detailsOptional" id="download" style="display:none;" >download</div>
 	  </div>
-<div class="clear"></div>
-	  <div id="details" >
-		<div id="detailsaudio" style="display:none"></div>
-		
-		
+
+	  <div class="clear"></div>
+
+	  <div class="detailsOptional" id="details">
+		<div id="detailsAudio" ></div>
+		<div id="detailsAudioImage"></div>
 		<div id="detailspectrogram" ></div>
 		  
 		</div>
@@ -115,7 +115,7 @@ optionKey="id"
 
 	</div>
 <div class="clear"></div>
-	<div id="footer" class="floatwrapper" ><div class="first">
+	<div id="footer" ><div class="first">
 <img src="images/DIISRTE_Inline-PNGSmall_200.png"></div><div class="text" ><p>You accept all risks and responsibility for losses, damages, costs and other consequences resulting directly or indirectly from using this site and any information or material available from it. If you have any concerns about the veracity of the data, please make enquiries via <a href="mailto:info@imos.org.au">info@imos.org.au</a> to be directed to the data custodian.</p></div>
 
 	</div>

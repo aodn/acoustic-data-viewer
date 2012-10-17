@@ -91,9 +91,13 @@ log4j = {
            'net.sf.ehcache.hibernate'
 }
 
+/*
+	project config items
+*/
 
 specImageHeight = "240"
 carouselHeight = "275"
 specDetailedImageHeight = "300"
+baseDirectory = "/tmp/acousticViewerDownloads/"
 
 

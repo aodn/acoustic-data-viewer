@@ -4,7 +4,9 @@ class HomeController {
 	
 	def grailsApplication
 	
-    def index() {				
-		[deployments: Acoustic_Deployments.findByIsPrimary(true), config: grailsApplication.config]
+    def index() {		
+		def deployments = Acoustic_Deployments.findAllByIsPrimaryAndDataPathIsNotNull(true)
+		
+		[deployments: deployments, config: grailsApplication.config]
 	}
 }

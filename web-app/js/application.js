@@ -24,7 +24,7 @@ jQuery(document).ready(function () {
 
 	jQuery('#sitePicker').ddslick({
 		width: 350,
-		selectText: "  - Choose a Site - ",
+		selectText: "  - Choose a Deployment - ",
 		onSelected: function(x){
 			if (x.selectedData.value != "") {
 				toggleHelp();

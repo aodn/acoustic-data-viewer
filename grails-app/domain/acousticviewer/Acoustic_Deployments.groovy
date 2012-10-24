@@ -35,7 +35,7 @@ class Acoustic_Deployments {
 
    } 
    def getStartTime() {
-        return new SimpleDateFormat('dd-MM-yy').format(this.timeDeploymentStart);
+        return new SimpleDateFormat('dd-MM-yyyy').format(this.timeDeploymentStart);
     }
 
    String toString() {

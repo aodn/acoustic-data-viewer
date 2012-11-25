@@ -78,6 +78,7 @@ log4j = {
     //
     appenders {
 		//    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+		
 		//disable stacktrace file
 		'null' name:'stacktrace'
     }

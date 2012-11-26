@@ -59,7 +59,6 @@
 			<li>Choose a Site/deployment from the picker above</li>			
 			<li>You will be presented a set of spectrograms for the deployment </li>			
 			<li>Clicking on a spectrogram will open below an expanded view of the chosen time period</li>	
-			<li>...</li>
 		  </ol>
 		  
 		</div>

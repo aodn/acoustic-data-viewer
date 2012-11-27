@@ -361,18 +361,17 @@ a.controls {
 }
 
 #footer {
-	margin: 0 auto;	
+	margin: 25px;
     width: 90%;
+	
 }
 #footer .first{
 	float: left;
 	width: 250px;	
 	height: 150px;
 }
-#footer .text{
-	font-size: 0.8em;
-	height: 50px;
-	text-shadow: 1px 1px 0 #EFEFEF;
+#footer *{
+	font-size: 11px;
 }
 #footer p{
 	padding-top: 13px;

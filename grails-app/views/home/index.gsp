@@ -115,10 +115,26 @@
 
 	</div>
 <div class="clear"></div>
-	<div id="footer" ><div class="first">
-<img src="images/DIISRTE_Inline-PNGSmall_200.png"></div><div class="text" ><p>You accept all risks and responsibility for losses, damages, costs and other consequences resulting directly or indirectly from using this site and any information or material available from it. If you have any concerns about the veracity of the data, please make enquiries via <a href="mailto:info@imos.org.au">info@imos.org.au</a> to be directed to the data custodian.</p></div>
+	<div id="footer" >
+
+<div class="first">
+
+	  <a href="http://www.innovation.gov.au/Section/AboutDIISR/FactSheets/Pages/NationalCollaborativeResearchInfrastructureStrategy%28NCRIS%29FactSheet.aspx">
+<img alt="Close popup" class="left" src="images/DIISRTE-stacked-2012.png" /></a>
+	  <a href="http://www.utas.edu.au/"><img alt="Close popup" class="left" src="images/Utas_vert.png" /></a>
+	  
+
 
 	</div>
+	  <div>
+				<a href="http://www.imos.org.au" title="Integrated Marine Observing System">IMOS</a> is supported by the Australian Government through the
+		<a href="http://www.innovation.gov.au/Section/AboutDIISR/FactSheets/Pages/NationalCollaborativeResearchInfrastructureStrategy%28NCRIS%29FactSheet.aspx">
+		National Collaborative Research Infrastructure Strategy</a>
+		and the Super Science Initiative.  It is led by the <a href="http://www.utas.edu.au/">University of Tasmania</a> on behalf of the Australian marine and climate science community.<BR/>You accept all risks and responsibility for losses, damages, costs and other consequences resulting directly or indirectly from using this site and any information or material available from it.<BR/>If you have any concerns about the veracity of the data, please make enquiries via <a href="mailto:info@imos.org.au">info@imos.org.au</a> to be directed to the data custodian.<br/>IMOS data is made freely available under the <a href="http://imos.org.au/fileadmin/user_upload/shared/IMOS%20General/documents/internal/IMOS_Policy_documents/Policy-Acknowledgement_of_use_of_IMOS_data_11Jun09.pdf" title="conditions of use">Conditions of Use.</a><br/>
+	Created by <a href="http://imos.org.au/emii.html" title="eMarine Information Infrastructure">eMII</a> &nbsp;
+		<a href="http://www.imos.org.au" title="Integrated Marine Observing System">&copy; IMOS Australia</a>  &nbsp;
+		Comments on this site? Contact us at <a href="mailto:info@emii.org.au">info@emii.org.au</a>
+	  </div>
 
   </body>
 </html>

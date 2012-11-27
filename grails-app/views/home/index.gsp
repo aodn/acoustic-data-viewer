@@ -33,7 +33,7 @@
 
 
 	<div  >
-	  <img id="logo" src="images/IMOS_ANMN_Facility_6_logo.png" alt="IMOS ANMN Logo" width="400" />
+	  <img id="logo" src="images/IMOS_ANMN_Facility_6e-AcousticObservations_logo.png" alt="IMOS ANMN Logo" width="400" />
 	  <div id="floatingTitleDiv">
 		<h1 id="title">IMOS Acoustic Data Viewer</h1>
 

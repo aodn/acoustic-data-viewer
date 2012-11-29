@@ -127,6 +127,11 @@
 
 	</div>
 	  <div>
+ 
+
+		This site is licensed under a <a title="Createive Commons License" href="http://creativecommons.org/licenses/by/3.0/au/" target="_blank"><nobr>Creative Commons Attribution 3.0 Australia License</nobr></a> &nbsp;
+		  <a class="external" title="Creative Commons License" href="http://creativecommons.org/licenses/by/3.0/au/" target="_blank"><img src="images/by.png" width="80"></a>
+	  <BR>
 				<a href="http://www.imos.org.au" title="Integrated Marine Observing System">IMOS</a> is supported by the Australian Government through the
 		<a href="http://www.innovation.gov.au/Section/AboutDIISR/FactSheets/Pages/NationalCollaborativeResearchInfrastructureStrategy%28NCRIS%29FactSheet.aspx">
 		National Collaborative Research Infrastructure Strategy</a>

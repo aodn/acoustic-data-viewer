@@ -7,29 +7,42 @@ class DownloadController {
     def index() { 
 		
 		def datetimeHash = params.dateTime.replace(":","").replace("-","")
-		def baseDir = grailsApplication.config.baseDirectory
+		def baseDir = grailsApplication.config.baseDirectory 
 		
-		def zipFolder = baseDir + params.downloadFolderDescripter + "/"
-		def destFolder = zipFolder + datetimeHash + "/"
-		def destFile = baseDir + "/zips/" + params.downloadFolderDescripter + "_" + datetimeHash + ".zip"
+		def downloadFolder = baseDir +  params.downloadFolderDescripter + "/" + datetimeHash + "/"
+		def zipFolder =  baseDir +  params.downloadFolderDescripter  + "/zips/" 
+		def downloadFile =   zipFolder + datetimeHash + ".zip"
 		
-		try {
+
+		
+		//try {
 			
-			new File(destFolder).mkdirs() 
+			new File(downloadFolder).mkdirs()
+			new File(zipFolder).mkdirs()
 
 			def ant = new AntBuilder()
 
-			// expecting valid URL's at this stage. User would have already seen errors
-			ant.get(src: params.audioUrl, dest: destFolder)
-			ant.get(src: params.specUrl, dest: destFolder)
-			ant.get(src: params.wavPath, dest: destFolder)
+			// expecting valid URL's at this stage. User would have already seen errors			
+			ant.get(src: params.audioUrl, ignoreerrors:true,
+					dest: downloadFolder + params.audioFilename, 
+					verbose:true,
+					usetimestamp: true)
+			ant.get(src: params.specUrl, ignoreerrors:true,
+					dest: downloadFolder + params.specFilename, 
+					verbose:true,
+					usetimestamp: true)
+			ant.get(src: params.wavPath, ignoreerrors:true,
+					dest: downloadFolder + params.wavFilename, 
+					verbose:true,
+					usetimestamp: true)
 
 			ant.zip(
-			   destfile: destFile,
-			   basedir:   destFolder
+			   destfile: downloadFile,
+			   basedir:  downloadFolder
 		   )
 		   
-			File zipFile = new File(destFile)
+		   
+			File zipFile = new File(downloadFile)
 			
 			if (zipFile.length() > 1){
 				response.setHeader("Content-Type", "application/zip") 
@@ -37,13 +50,13 @@ class DownloadController {
 				response.outputStream << zipFile.newInputStream()
 			}
 			else{				
-				render text: "ERROR: Problems occurred creating the Zip file. " + e , status: 404		
+				render text: "ERROR: Problems occurred creating the Zip file. " //+ e , status: 404		
 			}
 			
-		}
-		catch (Exception e) {
-			render text: "ERROR: Unable to create the Zip file. " + e , status: 404		
-		}
+		//}
+		//catch (Exception e) {
+		//	render text: "ERROR: Unable to create the Zip file. " + e , status: 404		
+		//}
 		
 	}
 

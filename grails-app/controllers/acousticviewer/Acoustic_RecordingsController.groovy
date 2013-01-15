@@ -32,9 +32,12 @@ class Acoustic_RecordingsController {
 					def path = acoustic_DeploymentInstance.dataPath.replaceAll('/$', "") // remove trailing slash	
 					path = path + "/" + acoustic_SpectrogramInstance.subdirectory.replaceAll('/$', "")
 					
-					def wavPath = path + "/raw/"
-					def specUrl =  path + '/recording_spec/' + trimmed_filename + "SP.png"
-					def audioUrl = path + '/recording_wave/' + trimmed_filename + "WF.png"
+					def wavFilename = trimmed_filename + ".dat"
+					def wavPath = path + "/raw/" + wavFilename
+					def specFilename = trimmed_filename + "SP.png"
+					def specUrl =  path + '/recording_spec/' + specFilename
+					def audioFilename =  trimmed_filename + "WF.png"
+					def audioUrl = path + '/recording_wave/' + audioFilename
 					
 					/*
 						raw/   for all the raw sound recordings
@@ -42,7 +45,14 @@ class Acoustic_RecordingsController {
 						recording_spec/  with one spectrogram image for each recording
 						recording_wave/  with a waveform image for each recording
 					*/
-					map = [ 'specUrl':specUrl ,'audioUrl':audioUrl, 'wavPath': wavPath, 'dateTime': acoustic_recordingsList.timeRecordingStart, 'downloadFolderDescripter': downloadFolderDescripter]
+					map = [ 'wavFilename' : wavFilename,
+							'specFilename': specFilename,
+							'audioFilename': audioFilename, 
+							'specUrl':specUrl ,
+							'audioUrl':audioUrl, 
+							'wavPath': wavPath, 
+							'dateTime': acoustic_recordingsList.timeRecordingStart, 
+							'downloadFolderDescripter': downloadFolderDescripter]
 				}
 				
 			}

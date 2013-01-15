@@ -103,6 +103,6 @@ log4j = {
 specImageHeight = "240"
 carouselHeight = "275"
 specDetailedImageHeight = "300"
-baseDirectory = "/tmp/acousticViewerDownloads/"
+baseDirectory = "/tmp/acousticViewerDownloads/" // add a forward slash
 
 

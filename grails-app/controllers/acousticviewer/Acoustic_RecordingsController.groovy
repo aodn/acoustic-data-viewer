@@ -32,7 +32,7 @@ class Acoustic_RecordingsController {
 					def path = acoustic_DeploymentInstance.dataPath.replaceAll('/$', "") // remove trailing slash	
 					path = path + "/" + acoustic_SpectrogramInstance.subdirectory.replaceAll('/$', "")
 					
-					def wavFilename = trimmed_filename + ".dat"
+					def wavFilename = trimmed_filename + ".DAT"
 					def wavPath = path + "/raw/" + wavFilename
 					def specFilename = trimmed_filename + "SP.png"
 					def specUrl =  path + '/recording_spec/' + specFilename

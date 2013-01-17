@@ -29,7 +29,9 @@ jQuery(document).ready(function () {
 			if (x.selectedData.value != "") {
 				toggleHelp();
 				stepcarousel.loadcontent('mainspectrogram','acoustic_Spectrograms/list?deployment=' + x.selectedData.value);					
-			}			
+			}
+			hideDetails();
+			
 		}   
 	});		
 		
@@ -145,10 +147,9 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 				jQuery('#mainspectrogramClickDetails').html( "Detailed information for <b>'" + msg.dateTime + "'</b>");				
 				loadDetailControls(clickLeftPosition,spectrogramId);
 				
-				jQuery('#detailspectrogram').html('<img class="lazy" src="images/loading640x400.gif" height="' + specDetailedImageHeight +'" data-original="' + msg.specUrl + '" />');
-				lazyload('#detailspectrogram');
-				jQuery('#detailsAudioImage').html('<img class="lazy" src="images/loading640x400.gif" height="' + specDetailedImageHeight +'" data-original="' + msg.audioUrl + '" />');
-				lazyload('#detailsAudioImage');
+				jQuery('#detailspectrogram').html('<img class="lazy" height="' + specDetailedImageHeight +'" src="' + msg.specUrl + '" />');				
+				jQuery('#detailsAudioImage').html('<img class="lazy" height="' + specDetailedImageHeight +'" src="' + msg.audioUrl + '" />');
+				
 				
 				jQuery('.detailsOptional, #detailsHeader').show(); // options when details are sucessfully loaded
 				jQuery('input:hidden[name=downloadDetailsAsJSON]').val(jQuery.param(msg));
@@ -156,8 +157,8 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 			}
 			else {
 				// This should never happen.
-				jQuery('#errorDetails').hide().show("slow");
-				jQuery('.detailsOptional, #detailsHeader').hide(); 
+				jQuery('#errorDetails').show();
+				hideDetails();
 			}
 			
 			
@@ -165,6 +166,12 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 		}
 	});
 }
+
+function hideDetails() {
+	jQuery('#errorDetails').hide();
+	jQuery('.detailsOptional, #detailsHeader').hide(); 
+}
+
 function download() {	 
 	location =  "download/?" + jQuery('input:hidden[name=downloadDetailsAsJSON]').val();		
 }

@@ -63,8 +63,9 @@ stepcarousel.setup({
 	//console.log()
 	},
 	onslide:function(){
-	// update mainspectrogram_clickDetails with start date?
-	console.log('get time at this point'); 
+		// update mainspectrogram_clickDetails with start date?
+		//console.log('get time at this point');
+		callresizeViewport();
 	},
 	
 	oninit:function(){
@@ -74,15 +75,21 @@ stepcarousel.setup({
 	}
 });
 
+function callresizeViewport() {
+	var evt = document.createEvent('UIEvents');
+	evt.initUIEvent('resize', true, false,window,0);
+	window.dispatchEvent(evt);
+}
+
 
 function lazyload(parentSelector) {
 	
 	// lazy load of all images with class lazy.
-   // images require a data-original="realimage.png" attribute
-   jQuery(parentSelector + ' img.lazy').lazyload({
-		effect: "fadeIn"
+	// images require a data-original="realimage.png" attribute
+	jQuery(parentSelector + ' img.lazy').lazyload({
+		effect: "fadeIn",
+		skip_invisible: false
 	});
-	
 }
 
 
@@ -97,11 +104,9 @@ function loadCarouselSlider() {
 		max: panels,
 		stop: function(event, ui) {
 			var val = jQuery(this).slider( "value" );
-			stepcarousel.moveTo('mainspectrogram', val);
+			stepcarousel.moveTo('mainspectrogram', val);	
 		}
-
 	});
-
 }
 
 
@@ -114,9 +119,9 @@ function toggleHelp(e,show) {
 		jQuery('#mainspectrogramSplash').hide();
 		jQuery('#mainspectrogramContainer').show();
 	}
-	//if (e != undefined) {
-	//	e.preventDefault();
-	//}
+//if (e != undefined) {
+//	e.preventDefault();
+//}
 	
 }
 
@@ -160,9 +165,9 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 		}
 	});
 }
- function download() {	 
-		location =  "download/?" + jQuery('input:hidden[name=downloadDetailsAsJSON]').val();		
- }
+function download() {	 
+	location =  "download/?" + jQuery('input:hidden[name=downloadDetailsAsJSON]').val();		
+}
 
 
 

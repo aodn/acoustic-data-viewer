@@ -67,7 +67,8 @@ stepcarousel.setup({
 	onslide:function(){
 		// update mainspectrogram_clickDetails with start date?
 		//console.log('get time at this point');
-		callresizeViewport();
+		//callresizeViewport();
+		jQuery(window).trigger('resize');
 	},
 	
 	oninit:function(){
@@ -199,7 +200,8 @@ function handleSpectroClick(e,spectrogramId) {
 	
 	loadDetails(clickLeftPosition,spectrogramId);
 	
-	e.preventDefault();
+	//e.preventDefault(); causes IE bug
+	return false;
 }
 
 

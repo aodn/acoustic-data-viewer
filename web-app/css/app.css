@@ -230,12 +230,16 @@ table.featureInfo caption{
 #mainspectrogram {
 	
 	border-radius: 5px;
-	/*margin-top: 6px;*/
-background: #545454; 
-	
+	margin-top: 6px;
+    background: #545454;
 	box-shadow: 3px 2px 5px rgba(0,0,0, 0.8);
 	border-radius: 0px 0px 4px 4px ;
 }
+
+#detailsAudioImage, #detailspectrogram {
+
+}
+
 .panelinfo {
 	border-left: 1px solid #666666;
 	padding-left: 5px;

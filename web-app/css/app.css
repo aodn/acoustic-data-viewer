@@ -3,9 +3,7 @@ html, body {
 
 	/*font-family:"Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;*/
 	font:14px "Helvetica Neue",Helvetica,Arial,sans-serif;
-    height: 100%;
-
-    margin: 0px; 
+    height: 99.9999%;
     color: #666;
 	background: #fafafa; /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -17,6 +15,11 @@ html, body {
 	background: -ms-radial-gradient(center, ellipse cover,  #eeeeee 51%,#cccccc 100%); /* IE10+ */
 	background: radial-gradient(ellipse at center,  #eeeeee 51%,#cccccc 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+
+    width: 99.9999%;
+    margin: 0%;
+    padding: 0%;
+    overflow: auto; //automatic overflow adjusts the width accordingly and prevents the grayed out horizontal scroll bar from appearing
 	
 	
 
@@ -230,12 +233,16 @@ table.featureInfo caption{
 #mainspectrogram {
 	
 	border-radius: 5px;
-	/*margin-top: 6px;*/
-background: #545454; 
-	
+	margin-top: 6px;
+    background: #545454;
 	box-shadow: 3px 2px 5px rgba(0,0,0, 0.8);
 	border-radius: 0px 0px 4px 4px ;
 }
+
+#detailsAudioImage, #detailspectrogram {
+
+}
+
 .panelinfo {
 	border-left: 1px solid #666666;
 	padding-left: 5px;

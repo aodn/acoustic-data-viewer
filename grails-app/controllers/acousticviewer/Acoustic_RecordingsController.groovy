@@ -7,7 +7,7 @@ class Acoustic_RecordingsController {
 		
 		def map = []
 		
-		if (params.containsKey('acu_specId') && params.containsKey('x_coord')) {			
+		if (params.containsKey('acu_specId') && params.containsKey('x_coord')) {
 			// acu_specId is the Acoustic_Spectrogram id
 			//print params
 			def acoustic_SpectrogramInstance = Acoustic_Spectrograms.get(params.acu_specId)
@@ -24,20 +24,23 @@ class Acoustic_RecordingsController {
 
 					def trimmed_filename = acoustic_recordingsList.filename.trim()
 					def pos = trimmed_filename.lastIndexOf('.');
-					def extension = trimmed_filename.substring(pos+1)
 					
 					def downloadFolderDescripter = acoustic_DeploymentInstance.siteCode + "-" + acoustic_DeploymentInstance.curtinId
 					
 					// path to files
-					def path = acoustic_DeploymentInstance.dataPath.replaceAll('/$', "") // remove trailing slash	
-					path = path + "/" + acoustic_SpectrogramInstance.subdirectory.replaceAll('/$', "")
+					def baseUrl = acoustic_DeploymentInstance.dataPath.replaceAll('/$', "") // remove trailing slash
+					def path = "/" + acoustic_SpectrogramInstance.subdirectory.replaceAll('/$', "")
+
+
+                    def calibrationFilename = "t" + acoustic_DeploymentInstance.curtinId + "_calibration_data.mat"
+                    def calibrationPath = "/extras/" + calibrationFilename
 					
 					def wavFilename = trimmed_filename + ".DAT"
 					def wavPath = path + "/raw/" + wavFilename
 					def specFilename = trimmed_filename + "SP.png"
-					def specUrl =  path + '/recording_spec/' + specFilename
+					def specPath =  path + '/recording_spec/' + specFilename
 					def audioFilename =  trimmed_filename + "WF.png"
-					def audioUrl = path + '/recording_wave/' + audioFilename
+					def audioPath = path + '/recording_wave/' + audioFilename
 					
 					/*
 						raw/   for all the raw sound recordings
@@ -45,14 +48,19 @@ class Acoustic_RecordingsController {
 						recording_spec/  with one spectrogram image for each recording
 						recording_wave/  with a waveform image for each recording
 					*/
-					map = [ 'wavFilename' : wavFilename,
+					map = [
+                            'baseUrl': baseUrl,
+                            'wavFilename' : wavFilename,
 							'specFilename': specFilename,
 							'audioFilename': audioFilename, 
-							'specUrl':specUrl ,
-							'audioUrl':audioUrl, 
-							'wavPath': wavPath, 
-							'dateTime': acoustic_recordingsList.timeRecordingStart, 
-							'downloadFolderDescripter': downloadFolderDescripter]
+							'specPath':specPath ,
+							'audioPath':audioPath, 
+							'wavPath': wavPath,
+							'dateTime': acoustic_recordingsList.timeRecordingStart,
+                            'calibrationPath': calibrationPath,
+                            'calibrationFilename': calibrationFilename,
+							'downloadFolderDescripter': downloadFolderDescripter
+                    ]
 				}
 				
 			}

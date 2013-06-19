@@ -140,16 +140,17 @@ function loadDetails(clickLeftPosition,spectrogramId) {
 		},
 		dataType: "json",
 		success: function(msg) { 
-						
-			if (msg.specUrl) {				
+
+            // only test spec. audio is optional
+			if (msg.specPath) {
 				
 				jQuery('#errorDetails').hide();
 				
 				jQuery('#mainspectrogramClickDetails').html( "Detailed information for <b>'" + msg.dateTime + "'</b>");				
 				loadDetailControls(clickLeftPosition,spectrogramId);
 				
-				jQuery('#detailspectrogram').html('<img class="lazy" height="' + specDetailedImageHeight +'" src="' + msg.specUrl + '" />');				
-				jQuery('#detailsAudioImage').html('<img class="lazy" height="' + specDetailedImageHeight +'" src="' + msg.audioUrl + '" />');
+				jQuery('#detailspectrogram').html('<img class="lazy" height="' + specDetailedImageHeight +'" src="' + msg.baseUrl + msg.specPath + '" />');
+				jQuery('#detailsAudioImage').html('<img class="lazy" height="' + specDetailedImageHeight +'" src="' + msg.baseUrl + msg.audioPath + '" />');
 				
 				
 				jQuery('.detailsOptional, #detailsHeader').show(); // options when details are sucessfully loaded

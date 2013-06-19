@@ -95,20 +95,23 @@
 			  <a id="detailsControlForward" class="controls" href="javascript:loadDetails(+1, 'specid')">
 				<img src="images/fast_forward.png" alt="Move forward one" title="Move forward one time period" /></a>
 		</div>	
-		<div class="detailsOptional"  style="display:none;" >
+		<div class="detailsOptional"  style="display:block;" >
 		  <input  type="hidden" name="downloadDetailsAsJSON" />
-		  <button id="download" onclick="download();return false;" >Download</button>
+		  <button class="download" onclick="download();return false;" >Download Data</button>
+          <a target="_blank" href="http://data.aodn.org.au/IMOS/public/ANMN/Acoustic/code/" >
+                  <button>Matlab data reader</button>
+          </a>
 		</div>
 	  </div>
 
 	  <div class="clear"></div>
 
 	  <div class="detailsOptional" id="details">
-		<div id="detailsAudio" ></div>
+		<div id="detailsAudio"></div>
 		<div id="detailsAudioImage"></div>
-		<div id="detailspectrogram" ></div>
+		<div id="detailspectrogram"></div>
 		  
-		</div>
+	  </div>
 		
 	  </div>
 
@@ -130,9 +133,10 @@
  
 
 		
-            <p>IMOS data is made freely available under the <a href="http://imos.org.au/fileadmin/user_upload/shared/IMOS%20General/documents/internal/IMOS_Policy_documents/Policy-Acknowledgement_of_use_of_IMOS_data_11Jun09.pdf" title="Conditions of Use">Conditions of Use</a>. Both IMOS data and this site are licensed under a <a class="external" title="Creative Commons License" href="http://creativecommons.org/licenses/by/2.5/au/" target="_blank"><span>Creative Commons Attribution 2.5 Australia License</span></a> <a class="external" title="Creative Commons License" href="http://creativecommons.org/licenses/by/2.5/au/" target="_blank"><img src="images/by.png" width="65"></a><br/>You accept all risks and responsibility for losses, damages, costs and other consequences resulting directly or indirectly from using this site and any information or material available from it. If you have any concerns about the veracity of the data, please make enquiries via <a href="mailto:info@imos.org.au">info@imos.org.au</a> to be directed to the data custodian.IMOS is supported by the Australian Government through the National Collaborative Research Infrastructure Strategy and the Super Science Initiative. It is led by the University of Tasmania on behalf of the Australian marine &amp; climate science community.</p>
+            <p>IMOS data is made freely available under the <a href="http://imos.org.au/fileadmin/user_upload/shared/IMOS%20General/documents/internal/IMOS_Policy_documents/Policy-Acknowledgement_of_use_of_IMOS_data_11Jun09.pdf" title="Conditions of Use">Conditions of Use</a>. Both IMOS data and this site are licensed under a <a class="external" title="Creative Commons License" href="http://creativecommons.org/licenses/by/2.5/au/" target="_blank"><span>Creative Commons Attribution 2.5 Australia License</span></a> <a class="external" title="Creative Commons License" href="http://creativecommons.org/licenses/by/2.5/au/" target="_blank"><img src="images/by.png" width="65"></a><br/>You accept all risks and responsibility for losses, damages, costs and other consequences resulting directly or indirectly from using this site and any information or material available from it. If you have any concerns about the veracity of the data, please make enquiries via <a href="mailto:info@emii.org.au">info@emii.org.au</a> to be directed to the data custodian.IMOS is supported by the Australian Government through the National Collaborative Research Infrastructure Strategy and the Super Science Initiative. It is led by the University of Tasmania on behalf of the Australian marine &amp; climate science community.</p>
         
 	  </div>
+    </div>
 
   </body>
 </html>

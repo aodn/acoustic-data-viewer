@@ -43,8 +43,10 @@
 	  </div>
 	  
 	  <div class="toplinks">
+          <a target="_blank" href="http://portalhelp.aodn.org.au/Portal2_help/?q=node/160" title="Help using this page" class="leftmenu_ahref " >Help</a> -
 		<a target="_blank" href="http://www.emii.org.au"  title="e-Marine Information Infrastructure" class="leftmenu_ahref " >eMII Home</a>
-		<a target="_blank" href="http://www.imos.org.au" title="Integrated Marine Observing System" class="leftmenu_ahref " >IMOS Home</a>
+          <a target="_blank" href="http://www.imos.org.au" title="Integrated Marine Observing System" class="leftmenu_ahref " >IMOS Home</a>
+
 		<!--a target="_blank" onclick="javascript:toggleHelp(event,true);" href="#" title="Using this site" class="leftmenu_ahref " >Help</a-->
 	  </div>
 
@@ -53,13 +55,9 @@
 	 
 
 	  <div id="mainbody">
-		<div id="mainspectrogramSplash">
-		  <h2>Using the IMOS Acoustic data viewer:</h2>
-		  <ol>
-			<li>Choose a Site/deployment from the picker above</li>			
-			<li>You will be presented a set of spectrograms for the deployment </li>			
-			<li>Clicking on a spectrogram will open below an expanded view of the chosen time period</li>	
-		  </ol>
+		<div id="mainspectrogramSplash" style="display:none">
+            <h4>The Acoustic Data Viewer provides access to sea noise recordings from the Australian National Mooring Network (ANMN) Passive Acoustic Observatories facility.</h4>
+			<h2>Choose a Site/deployment from the picker above</h2>
 		  
 		</div>
 		<div id="mainspectrogramContainer" style="display:none">

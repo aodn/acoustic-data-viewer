@@ -164,11 +164,8 @@ table.featureInfo caption{
 }
 
 .toplinks {
-
-
-
 	float:right;
-	position: absolute;
+	position: relative;
     top: 4px;
 	right: 20px;
 	padding: 10px;
@@ -186,9 +183,7 @@ table.featureInfo caption{
     text-decoration: underline;
 }
 
-
-
-#mainspectrogramContainer, #mainspectrogramSplash {
+#mainspectrogramContainer {
 	padding: 10px;
 	border-radius: 5px;
 	
@@ -207,6 +202,10 @@ table.featureInfo caption{
 	color: #EEEEEE;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 	text-shadow: 1px 1px 0 #333333;
+}
+#mainspectrogramSplash {
+    padding: 20px;
+    margin-left: 40px;
 }
 #mainspectrogramContainer {
 	font-size: 12px;
@@ -320,7 +319,6 @@ a.controls {
 
 #floatingTitleDiv {
 	float: left;
-	width: 700px;
 }
 #logo {
 	float: left;	

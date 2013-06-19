@@ -2,26 +2,13 @@
 
 
 jQuery(document).ready(function () {
-	
-	
-	/*<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
-	(function(jQuery) {
-		jQuery('#spinner').ajaxStart(function() {
-			jQuery(this).fadeIn();
-		}).ajaxStop(function() {
-			jQuery(this).fadeOut();
-		});
-	})(jQuery);
-	*/
-   
-   
-	
+
 	// stop images being draggable inside the carousel in particular
 	jQuery(document).on("mousedown", "img", function(event){ 		
 		event.preventDefault();		
 	});
 
-
+    // setup fancy picker
 	jQuery('#sitePicker').ddslick({
 		width: 350,
 		selectText: "  - Choose a Deployment - ",
@@ -33,8 +20,27 @@ jQuery(document).ready(function () {
 			hideDetails();
 			
 		}   
-	});		
-		
+	});
+
+    // splash contents
+    jQuery.ajax({
+        type: "GET",
+        url: "helpPageProxy",
+        dataType: "html",
+        success: function(msg) {
+            var htmlChunk  = jQuery("div.content.clear-block", msg).html();
+            jQuery('#mainspectrogramSplash').html(htmlChunk); // replace what is in index.gsp
+            // clear out unwanted elements
+            jQuery('#mainspectrogramSplash div.book-navigation').remove();
+            jQuery('#mainspectrogramSplash p:first-of-type').remove();
+            jQuery('#mainspectrogramSplash').show();
+
+        },
+        failure: function() {
+            jQuery('#mainspectrogramSplash').show(); // show default content
+        }
+
+    });
 
 	
 	
@@ -122,10 +128,6 @@ function toggleHelp(e,show) {
 		jQuery('#mainspectrogramSplash').hide();
 		jQuery('#mainspectrogramContainer').show();
 	}
-//if (e != undefined) {
-//	e.preventDefault();
-//}
-	
 }
 
 function loadDetails(clickLeftPosition,spectrogramId) {	

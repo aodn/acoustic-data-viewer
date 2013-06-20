@@ -14,7 +14,7 @@ class HelpPageProxyController {
             def html = grailsApplication.config.helpPageUrl.toURL().text
             render html
         } catch (IOException e) {
-            render status: 503
+            render status: 404
         }
     }
 }

@@ -34,9 +34,8 @@ jQuery(document).ready(function () {
             jQuery('#mainspectrogramSplash div.book-navigation').remove();
             jQuery('#mainspectrogramSplash p:first-of-type').remove();
             jQuery('#mainspectrogramSplash').show();
-
         },
-        failure: function() {
+        error: function() {
             jQuery('#mainspectrogramSplash').show(); // show default content
         }
 

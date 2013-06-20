@@ -35,8 +35,8 @@ class Acoustic_RecordingsController {
                     def calibrationFilename = "t" + acoustic_DeploymentInstance.curtinId + "_calibration_data.mat"
                     def calibrationPath = "/extras/" + calibrationFilename
 					
-					def wavFilename = trimmed_filename + ".DAT"
-					def wavPath = path + "/raw/" + wavFilename
+					def dataFilename = trimmed_filename + grailsApplication.config.dataExtension
+					def dataPath = path + "/raw/" + dataFilename
 					def specFilename = trimmed_filename + "SP.png"
 					def specPath =  path + '/recording_spec/' + specFilename
 					def audioFilename =  trimmed_filename + "WF.png"
@@ -50,12 +50,12 @@ class Acoustic_RecordingsController {
 					*/
 					map = [
                             'baseUrl': baseUrl,
-                            'wavFilename' : wavFilename,
+                            'dataFilename' : dataFilename,
 							'specFilename': specFilename,
 							'audioFilename': audioFilename, 
 							'specPath':specPath ,
 							'audioPath':audioPath, 
-							'wavPath': wavPath,
+							'dataPath': dataPath,
 							'dateTime': acoustic_recordingsList.timeRecordingStart,
                             'calibrationPath': calibrationPath,
                             'calibrationFilename': calibrationFilename,

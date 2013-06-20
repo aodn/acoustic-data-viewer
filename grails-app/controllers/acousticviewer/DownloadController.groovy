@@ -32,8 +32,8 @@ class DownloadController {
 					dest: downloadFolder + params.specFilename,
 					verbose:true,
 					usetimestamp: true)
-            ant.get(src: params.baseUrl + params.wavPath, ignoreerrors:true,
-                    dest: downloadFolder + params.wavFilename,
+            ant.get(src: params.baseUrl + params.dataPath, ignoreerrors:true,
+                    dest: downloadFolder + params.dataFilename,
                     verbose:true,
                     usetimestamp: true)
 

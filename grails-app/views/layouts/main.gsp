@@ -1,3 +1,11 @@
+<%--
+
+ Copyright 2013 IMOS
+
+ The AODN/IMOS Portal is distributed under the terms of the GNU General Public License
+
+--%>
+
 <!doctype html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->

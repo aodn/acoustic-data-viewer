@@ -1,3 +1,11 @@
+<%--
+
+ Copyright 2013 IMOS
+
+ The AODN/IMOS Portal is distributed under the terms of the GNU General Public License
+
+--%>
+
 
 <g:each in="${spectrogramList}" var="item">
   <div class="panel" style="width:${item.width}px;" >

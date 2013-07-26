@@ -1,3 +1,10 @@
+/*
+ * Copyright 2013 IMOS
+ *
+ * The AODN/IMOS Portal is distributed under the terms of the GNU General Public License
+ *
+ */
+
 .dd-select{ border-radius:2px; border:solid 1px #ccc; position:relative; cursor:pointer;}
 .dd-desc { color:#aaa; display:block; overflow: hidden; font-weight:normal; line-height: 1.4em; }
 .dd-selected{ overflow:hidden; display:block; padding:10px; font-weight:bold; background-color: #CCCCCC;  }

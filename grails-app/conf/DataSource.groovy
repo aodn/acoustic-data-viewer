@@ -26,24 +26,25 @@ hibernate {
 environments {
 	
     development {
-	dataSource {
+	    dataSource {
             driverClassName = "org.postgresql.Driver"
-	    url = "jdbc:postgresql://localhost:5432/acoustic_data_viewer"
+            url = "jdbc:postgresql://localhost:5432/acoustic_data_viewer"
             username = "postgres"
             password = "postgres"
-	}
+	    }
     }
 	
     test {
         dataSource {
+            driverClassName = "org.h2.Driver"
             dbCreate = "create-drop"
-            url = "jdbc:hsqldb:mem:testDb"
+            url = "jdbc:h2:mem:testDb;MVCC=TRUE"
         }
     }
 
     production {
-	dataSource {
-	    jndiName = "java:comp/env/jdbc/acoustic_data_viewer"
-	}
+	    dataSource {
+	        jndiName = "java:comp/env/jdbc/acoustic_data_viewer"
+	    }
     }
 }

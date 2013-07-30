@@ -1,3 +1,5 @@
+import javax.naming.InitialContext
+
 /*
  * Copyright 2013 IMOS
  *
@@ -115,3 +117,13 @@ helpPageUrl = "http://portalhelp.aodn.org.au/Portal2_help/?q=node/160";
 dataExtension = ".DAT";
 
 
+if(!grails.config.locations || !(grails.config.locations instanceof List)) {
+    grails.config.locations = []
+}
+
+try {
+    configurationPath = new InitialContext().lookup("java:comp/env/aodn.configuration")
+    grails.config.locations << "file:${configurationPath}"
+}
+catch (e) {
+}

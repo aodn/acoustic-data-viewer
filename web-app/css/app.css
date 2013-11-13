@@ -370,6 +370,9 @@ a.controls {
 #download {
 	float: right;
 }
+img.logo {
+    padding: 0 6px ;
+}
 
 #footer {
 	margin: 25px;
@@ -378,12 +381,10 @@ a.controls {
 }
 #footer .first{
 	float: left;
-	width: 250px;	
 	height: 150px;
+    margin: 0 10px ;
 }
 #footer *{
 	font-size: 11px;
 }
-#footer p{
-	padding-top: 13px;
-}
+

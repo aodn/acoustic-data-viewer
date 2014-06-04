@@ -212,7 +212,6 @@ table.featureInfo caption{
 }
 #mainspectrogramSplash {
     padding: 20px;
-    margin-left: 40px;
 }
 #mainspectrogramContainer {
 	font-size: 12px;
@@ -367,23 +366,27 @@ a.controls {
 	margin-top: 5px;
 }
 
+
+.floatLeft  { float:left; }
+.floatRight { float:right;}
+
 #download {
 	float: right;
 }
 img.logo {
-    padding: 0 6px ;
+    padding: 6px ;
 }
 
 #footer {
 	margin: 25px;
-    width: 90%;
-	
+	width: 100%;
 }
 #footer .first{
-	float: left;
-	height: 150px;
-    margin: 0 10px ;
+    width: 30%;
 }
+#footer .second{
+     width: 70%;
+ }
 #footer *{
 	font-size: 11px;
 }

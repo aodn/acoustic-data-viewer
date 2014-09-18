@@ -138,11 +138,9 @@
 <div id="footer">
 
     <div class="floatLeft first">
-        <img class="logo left" alt="DIISTRE Logo" target="_blank" src="http://static.emii.org.au/images/logo/NCRIS_Initiative_inline200.png"/>
-        <a href="http://www.utas.edu.au/" target="_blank"><img class="logo left" alt="UTAS Logo" src="http://static.emii.org.au/images/logo/utas/UTAS_MONO_190w.png"/>
-        </a>
-        <a title="Creative Commons License" href="http://creativecommons.org/licenses/by/3.0/au/" target="_blank"><img class="logo" src="images/by.png" width="80">
-        </a>
+        <img class="logo left" alt="NCRIS Logo" target="_blank" src="https://static.emii.org.au/images/logo/NCRIS_Initiative_inline200.png" height="80" />
+        <a href="http://www.utas.edu.au/" target="_blank"><img class="logo left" alt="UTAS Logo" src="https://static.emii.org.au/images/logo/utas/UTAS_MONO_Stacked_208w.png" height="85" /></a>
+        <a title="Creative Commons License" href="http://creativecommons.org/licenses/by/3.0/au/" target="_blank"><img class="logo" src="images/by.png" width="80"></a>
 
     </div>
 

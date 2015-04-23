@@ -4,9 +4,9 @@
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
+          <root url="file://$USER_HOME$/.grails/2.1.0/projects/AcousticViewer/plugins/rest-0.7/web-app" relative="/" />
           <root url="file://$USER_HOME$/.grails/2.1.0/projects/AcousticViewer/plugins/database-migration-1.1/grails-app/views" relative="/" />
           <root url="file://$USER_HOME$/.grails/2.1.0/projects/AcousticViewer/plugins/jquery-1.7.2/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.1.0/projects/AcousticViewer/plugins/rest-0.7/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -14,6 +14,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map />
+        <naming-strategy-map />
       </configuration>
     </facet>
   </component>
@@ -53,7 +54,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="grails-2.1.0 (2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="grails-2.1.0" level="application" />
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (acoustic-data-viewer-grailsPlugins)">
         <CLASSES>
@@ -69,6 +70,14 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.3.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.groovy.modules.http-builder/http-builder/jars/http-builder-0.5.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/rest/zips/rest-0.7.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/database-migration/zips/database-migration-1.1.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/resources/zips/resources-1.1.6.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/jquery/zips/jquery-1.7.2.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/hibernate/zips/hibernate-2.1.0.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/cache/zips/cache-1.0.0.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/tomcat/zips/tomcat-2.1.0.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/webxml/zips/webxml-1.4.1.zip!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -76,4 +85,3 @@
     </orderEntry>
   </component>
 </module>
-

@@ -20,23 +20,23 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map />
+        <naming-strategy-map />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/utils" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/i18n" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/controllers" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/domain" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/services" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/target/classes" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -56,14 +56,21 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.3.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.groovy.modules.http-builder/http-builder/jars/http-builder-0.5.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/rest/zips/rest-0.7.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/database-migration/zips/database-migration-1.1.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/resources/zips/resources-1.1.6.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/jquery/zips/jquery-1.7.2.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/hibernate/zips/hibernate-2.1.0.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/cache/zips/cache-1.0.0.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/tomcat/zips/tomcat-2.1.0.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/webxml/zips/webxml-1.4.1.zip!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="grails-2.1.0 (2)" level="application" />
+    <orderEntry type="library" name="grails-2.1.0" level="application" />
     <orderEntry type="module" module-name="acoustic-data-viewer-grailsPlugins" />
   </component>
 </module>
-

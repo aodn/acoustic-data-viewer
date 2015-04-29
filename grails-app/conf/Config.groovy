@@ -113,7 +113,7 @@ specImageHeight = "240"
 carouselHeight = "275"
 specDetailedImageHeight = "300"
 baseDirectory = "/tmp/acousticViewerDownloads/" // add a forward slash
-helpPageUrl = "http://portalhelp.aodn.org.au/Portal2_help/?q=node/160";
+helpPageUrl = "http://help.aodn.org.au/help/?q=node/17";
 dataExtension = ".DAT";
 
 

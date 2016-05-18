@@ -18,35 +18,10 @@ jQuery(document).ready(function () {
 				stepcarousel.loadcontent('mainspectrogram','acoustic_Spectrograms/list?deployment=' + x.selectedData.value);					
 			}
 			hideDetails();
-			
 		}   
 	});
-
-    // splash contents
-    jQuery.ajax({
-        type: "GET",
-        url: "helpPageProxy",
-        dataType: "html",
-        success: function(msg) {
-            var htmlChunk  = jQuery("div.content.clear-block", msg).html();
-            jQuery('#mainspectrogramSplash').html(htmlChunk); // replace what is in index.gsp
-            // clear out unwanted elements
-            jQuery('#mainspectrogramSplash div.book-navigation').remove();
-            jQuery('#mainspectrogramSplash p:first-of-type').remove();
-            jQuery('#mainspectrogramSplash').show();
-        },
-        error: function() {
-            jQuery('#mainspectrogramSplash').show(); // show default content
-        }
-
-    });
-
-	
-	
 });
 
-
-	
 stepcarousel.setup({
 	galleryid: 'mainspectrogram', //id of carousel DIV
 	beltclass: 'belt', //class of inner "belt" DIV containing all the panel DIVs
@@ -88,7 +63,6 @@ function callresizeViewport() {
 	evt.initUIEvent('resize', true, false,window,0);
 	window.dispatchEvent(evt);
 }
-
 
 function lazyload(parentSelector) {
 	

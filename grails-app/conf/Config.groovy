@@ -75,7 +75,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        grails.serverURL = "http://acousticviewer.emii.org.au"
+        grails.serverURL = "https://acoustic.aodn.org.au"
     }
 }
 
@@ -113,7 +113,7 @@ specImageHeight = "240"
 carouselHeight = "275"
 specDetailedImageHeight = "300"
 baseDirectory = "/tmp/acousticViewerDownloads/" // add a forward slash
-helpPageUrl = "http://help.aodn.org.au/help/?q=node/17";
+helpPageUrl = "https://help.aodn.org.au/aodn-data-tools/acoustic-data-viewer/";
 dataExtension = ".DAT";
 
 

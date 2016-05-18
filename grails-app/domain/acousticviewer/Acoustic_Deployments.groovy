@@ -21,7 +21,6 @@ class Acoustic_Deployments {
 	String dataPath
 	
 	// this will stop writing to DB table. 
-	/*
    transient beforeInsert = {
       throw new RuntimeException('create not allowed')
    }
@@ -31,9 +30,7 @@ class Acoustic_Deployments {
    transient beforeDelete = {
       throw new RuntimeException('delete not allowed')
    }
-   */
-
-
+   
    static mapping = {
       cache usage: 'read-only'
       version false

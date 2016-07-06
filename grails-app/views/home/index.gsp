@@ -41,7 +41,7 @@
 <body>
 
 <div>
-    <img id="logo" src="images/IMOS_ANMN_Facility_6e-AcousticObservations_logo.png" alt="IMOS ANMN Logo" width="400"/>
+    <img id="logo" src="${resource(dir: 'images', file: 'IMOS_ANMN_Facility_6e-AcousticObservations_logo.png')}" alt="IMOS ANMN Logo" width="400"/>
 
     <div id="floatingTitleDiv">
         <h1 id="title">IMOS Acoustic Data Viewer</h1>
@@ -72,7 +72,7 @@
 
             <div id="mainspectrogramPicker">
                 <div class="inline">Graph Picker: <a class="controls" href="javascript:stepcarousel.stepBy('mainspectrogram', -1)">
-                    <img src="images/rewind.png" alt="Move back one" title="Move back one"/></a>
+                    <img src="${resource(dir: 'images', file: 'rewind.png')}" alt="Move back one" title="Move back one"/></a>
                 </div>
 
                 <div class="inline" id="sliderContainer">
@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="inline">
-                    <a class="controls" href="javascript:stepcarousel.stepBy('mainspectrogram', 1)"><img src="images/fast_forward.png" alt="Move forward one" title="Move forward one"/>
+                    <a class="controls" href="javascript:stepcarousel.stepBy('mainspectrogram', 1)"><img src="${resource(dir: 'images', file: 'fast_forward.png')}" alt="Move forward one" title="Move forward one"/>
                     </a>
                 </div>
             </div>
@@ -101,9 +101,9 @@
 
             <div class="detailsOptional smaller" id="detailsControls">
                 <a id="detailsControlBack" class="controls" href="javascript:loadDetails(-1, 'specid')">
-                    <img src="images/rewind.png" alt="Move back one" title="Move back one time period"/></a>Adjust Time
+                    <img src="${resource(dir: 'images', file: 'rewind.png')}" alt="Move back one" title="Move back one time period"/></a>Adjust Time
                 <a id="detailsControlForward" class="controls" href="javascript:loadDetails(+1, 'specid')">
-                    <img src="images/fast_forward.png" alt="Move forward one" title="Move forward one time period"/></a>
+                    <img src="${resource(dir: 'images', file: 'fast_forward.png')}" alt="Move forward one" title="Move forward one time period"/></a>
             </div>
 
             <div class="detailsOptional" style="display:block;">

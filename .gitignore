@@ -1,2 +1,6 @@
 .idea
 target
+acoustic-data-viewer-grailsPlugins.iml
+acoustic-data-viewer.iml
+.slcache/
+web-app/META-INF/

@@ -71,6 +71,9 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+
+        // Google Analytics
+        googleAnalytics.trackingId = null
 		
     }
     production {

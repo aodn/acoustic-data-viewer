@@ -142,7 +142,7 @@
 
     <div class="floatRight second">
 
-        <p>IMOS is a national collaborative research infrastructure, supported by Australian Government. It is led by University of Tasmania in partnership with the Australian marine & climate science community.
+        <p>IMOS is a national collaborative research infrastructure, supported by Australian Government. It is operated by a consortium of institutions as an unincorporated joint venture, with the <a target="_blank" class="external" title="UTAS home page" href="http://www.utas.edu.au/">University of Tasmania</a> as Lead Agent.
         </p>
         <p>
             <a href="https://help.aodn.org.au/user-guide-introduction/aodn-portal/data-use-acknowledgement/" target="_blank" title="Data usage acknowledgement">Acknowledgement</a>

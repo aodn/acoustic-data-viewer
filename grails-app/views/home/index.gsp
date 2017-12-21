@@ -136,8 +136,8 @@
 <div id="footer">
 
     <div class="floatLeft first">
-        <img class="logo left" alt="NCRIS Logo" target="_blank" src="https://static.emii.org.au/images/logo/NCRIS_Initiative_inline200.png" height="80" />
-        <a href="http://www.utas.edu.au/" target="_blank"><img class="logo left" alt="UTAS Logo" src="https://static.emii.org.au/images/logo/utas/UTAS_MONO_Stacked_208w.png" height="85" /></a>
+        <img class="logo left" alt="NCRIS Logo" target="_blank" src="https://static.emii.org.au/images/logo/NCRIS_2017_110.png" />
+        <a href="http://www.utas.edu.au/" target="_blank"><img class="logo left" alt="UTAS Logo" src="https://static.emii.org.au/images/logo/UTAS_2017_110.png" /></a>
     </div>
 
     <div class="floatRight second">

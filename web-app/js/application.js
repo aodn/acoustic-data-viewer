@@ -172,11 +172,10 @@ function handleSpectroClick(e,spectrogramId) {
 	var beltPosition = jQuery('#acoustic_Spectrogram-'+spectrogramId).parents('.belt').position(); //parent div of panel divs	
 	var panelPosition = jQuery('#acoustic_Spectrogram-'+spectrogramId).parents('.panel').position(); //parent div of image
 	var imageLeftPosition = panelPosition.left + containerPosition.left + beltPosition.left;
-	var clickLeftPosition = e.clientX - imageLeftPosition;	
+	var clickLeftPosition = Math.round(e.clientX - imageLeftPosition);
 	
 	loadDetails(clickLeftPosition,spectrogramId);
-	
-	//e.preventDefault(); causes IE bug
+
 	return false;
 }
 

@@ -28,7 +28,7 @@ environments {
     development {
 	    dataSource {
             driverClassName = "org.postgresql.Driver"
-            dbCreate = "update"
+            //dbCreate = "update"
             url = "jdbc:postgresql://localhost:5432/acoustic_data_viewer"
             username = "postgres"
             password = "postgres"

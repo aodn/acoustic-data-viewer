@@ -43,6 +43,10 @@ grails.mime.types = [
 
 // What URL patterns should be processed by the resources plugin
 grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
+//grails.resources.resourceLocatorEnabled = true
+// uri-to-url resolution cache timeout in milliseconds
+// 0 == caching disabled , -1 == no timeout
+grails.resources.uriToUrlCacheTimeout = 30000
 
 // The default codec used to encode data with ${}
 grails.views.default.codec = "none" // none, html, base64

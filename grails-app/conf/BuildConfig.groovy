@@ -37,10 +37,6 @@ grails.project.dependency.resolution = {
         mavenRepo "https://repo.grails.org/grails/plugins"
     }
     dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-		//compile "org.jadira.usertype:usertype.jodatime:1.9"
-        // runtime 'mysql:mysql-connector-java:5.1.20'
-
 		// Workarounds for Grails not shipping ant in WAR
 		compile 'org.apache.ant:ant:1.8.4'
 		compile 'org.apache.ant:ant-launcher:1.8.4'
@@ -49,15 +45,7 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        runtime ":hibernate:3.6.10.19"
-        compile ":jquery:1.11.1"
-        compile ":jquery-ui:1.10.4"
-        compile ":blueprint:1.0.2"
-        compile ":resources:1.2.14"
-        compile ":blueprint:1.0.2"
+        compile ":hibernate4:4.3.4"
         build   ":tomcat8:8.0.5"
-        runtime ":database-migration:1.1"
-
-        compile ':cache:1.1.8'
     }
 }

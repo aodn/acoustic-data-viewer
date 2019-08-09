@@ -1,11 +1,27 @@
 pipeline {
-    agent none
+    agent { label 'master' }
 
     stages {
         stage('clean') {
-            agent { label 'master' }
             steps {
                 sh 'git clean -fdx'
+            }
+        }
+        stage('set_version') {
+            steps {
+                sh 'bumpversion patch'
+            }
+        }
+        stage('release') {
+            when { branch 'master' }
+            steps {
+                withCredentials([usernamePassword(credentialsId: env.CREDENTIALS_ID, passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                    sh '''
+                        export VERSION=$(bump2version --list --allow-dirty release | grep new_version= | sed -r s,"^.*=",,)
+                        git push origin master
+                        git push origin refs/tags/v$VERSION
+                    '''
+                }
             }
         }
         stage('container') {
@@ -13,6 +29,7 @@ pipeline {
                 dockerfile {
                     args '-v ${HOME}/.m2:/home/builder/.m2 -v ${HOME}/.grails:/home/builder/.grails'
                     additionalBuildArgs '--build-arg BUILDER_UID=${JENKINS_UID:-9999}'
+                    reuseNode true
                 }
             }
             stages {

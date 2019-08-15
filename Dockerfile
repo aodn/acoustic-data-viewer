@@ -9,12 +9,10 @@ ENV GRAILS_HOME /usr/lib/jvm/grails
 ENV PATH $GRAILS_HOME/bin:$PATH
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
     ca-certificates \
-    git-core \
+    git \
     openjdk-8-jdk \
-    libudunits2-dev \
-    python-dev \
+    python \
     unzip \
     wget \
     && rm -rf /var/lib/apt/lists/*

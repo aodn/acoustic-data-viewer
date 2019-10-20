@@ -10,8 +10,10 @@ bumpversion_build() {
 
 bumpversion_release() {
   bump2version patch
-  VERSION=$(bump2version --list --tag --commit  --allow-dirty release | grep -oP '^new_version=\K.*$')
-  git push origin $RELEASE_BRANCH
+  VERSION=$(bump2version --list --commit --allow-dirty release | grep -oP '^new_version=\K.*$')
+  git fetch origin
+  git reset --hard origin/$RELEASE_BRANCH
+  git tag -a -f -m 'Jenkins: create tag $VERSION' $VERSION
   git push origin tag $VERSION
 
 }

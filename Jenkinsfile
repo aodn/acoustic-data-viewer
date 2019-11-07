@@ -39,7 +39,9 @@ pipeline {
             }
             post {
                 success {
-                    archiveArtifacts artifacts: '**/*.war', fingerprint: true, onlyIfSuccessful: true
+                    dir('target/') {
+                        archiveArtifacts artifacts: '*.war', fingerprint: true, onlyIfSuccessful: true
+                    }
                 }
             }
         }

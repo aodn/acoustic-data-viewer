@@ -110,7 +110,7 @@
                 <input type="hidden" name="downloadDetailsAsJSON"/>
                 <button class="download" onclick="download();
                 return false;">Download Data</button>
-                <a target="_blank" href="http://data.aodn.org.au/IMOS/ANMN/Acoustic/code/NL_load_logger_data_new.m">
+                <a target="_blank" href="https://imos-data.s3-ap-southeast-2.amazonaws.com/IMOS/ANMN/Acoustic/code/NL_load_logger_data_new.m">
                     <button>Matlab data reader</button>
                 </a>
             </div>
